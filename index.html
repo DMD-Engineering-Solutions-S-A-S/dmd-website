@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMD Engineering Solutions | Simulación CFD & FEA</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tipografía Inter desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- 1. ENCABEZADO Y NAVEGACIÓN -->
+    <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800 text-white">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#inicio" class="text-lg font-bold tracking-tight flex items-center gap-2">
+                <span class="text-blue-500">DMD</span>
+                <span class="text-xs font-light tracking-widest text-slate-400 uppercase">Engineering Solutions</span>
+            </a>
+            <nav class="flex items-center gap-6">
+                <ul class="flex space-x-6 text-sm font-medium text-slate-300">
+                    <li><a href="#nosotros" data-key="nav-nosotros" class="hover:text-blue-400 transition-colors">Nosotros</a></li>
+                    <li><a href="#servicios" data-key="nav-servicios" class="hover:text-blue-400 transition-colors">Servicios</a></li>
+                    <li><a href="#proyectos" data-key="nav-proyectos" class="hover:text-blue-400 transition-colors">Proyectos</a></li>
+                    <li><a href="#contacto" data-key="nav-contacto" class="hover:text-blue-400 transition-colors">Contacto</a></li>
+                </ul>
+
+                <select id="langSelect" onchange="changeLanguage(this.value)" class="bg-slate-800 text-slate-200 text-xs font-semibold px-2.5 py-1.5 rounded border border-slate-700 outline-none cursor-pointer hover:border-blue-500 transition-colors">
+                    <option value="es">ES</option>
+                    <option value="en">EN</option>
+                    <option value="pt">PT</option>
+                </select>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. SECCIÓN PRINCIPAL (HERO) CON LOGO CENTRADO -->
+        <section id="inicio" class="bg-slate-900 text-white pt-8 pb-20 md:pt-8 md:pb-28 border-b border-slate-800">
+            <div class="max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
+                
+                <!-- Logo principal de la empresa -->
+                <img src="logo.jpeg" alt="DMD Engineering Solutions Logo" class="h-10 md:h-56 w-auto object-contain mb-8" onerror="this.onerror=null; this.src='https://via.placeholder.com/350x120/0f172a/3b82f6?text=DMD+LOGOTIPO';">
+
+                <!-- Subtítulo Principal -->
+                <h1 data-key="hero-title" class="text-2xl md:text-4xl font-extrabold tracking-tight mb-6 leading-tight text-slate-100 max-w-3xl">
+                    Diseño de detalle respaldado por simulación numérica computacional
+                </h1>
+
+                <p data-key="hero-desc" class="text-base md:text-lg text-slate-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                    Evaluamos, validamos y optimizamos sus proyectos mediante CFD y FEA antes de realizar inversiones físicas en prototipos o fabricación.
+                </p>
+
+                <a href="#contacto" data-key="hero-btn" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-all transform hover:-translate-y-0.5">
+                    Solicitar Cotización Técnica
+                </a>
+            </div>
+        </section>
+
+        <!-- 3. QUIÉNES SOMOS -->
+        <section id="nosotros" class="py-20 bg-white border-b border-slate-200">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 data-key="about-title" class="text-3xl font-bold text-slate-900 mb-6">Quiénes Somos</h2>
+                <p data-key="about-desc" class="text-lg text-slate-600 leading-relaxed font-light">
+                    Somos una firma de consultoría constituida por tres ingenieros mecánicos especializados. Nuestro propósito es reducir la incertidumbre en decisiones de ingeniería de alta complejidad, entregando resultados técnicamente sólidos que optimizan costos, tiempos y rendimiento operativo.
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. CATÁLOGO DE SERVICIOS -->
+        <section id="servicios" class="py-20 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 data-key="serv-title" class="text-3xl font-bold text-slate-900 mb-4">Nuestros Servicios</h2>
+                    <p data-key="serv-subtitle" class="text-slate-600 max-w-xl mx-auto font-light">Especializados en análisis avanzado de ingeniería y simulación por computadora.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Servicio 1: CFD -->
+                    <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-bold mb-6">CFD</div>
+                        <h3 data-key="s1-title" class="text-xl font-bold text-slate-900 mb-3">Análisis CFD y Flujo de Fluidos</h3>
+                        <p data-key="s1-desc" class="text-slate-600 font-light leading-relaxed">
+                            Simulación computacional de dinámica de fluidos para sistemas de ventilación, flujos internos o externos, comportamiento aerodinámico y optimización de pérdida de carga.
+                        </p>
+                    </div>
+
+                    <!-- Servicio 2: Térmico -->
+                    <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center text-amber-600 font-bold mb-6">FEM</div>
+                        <h3 data-key="s2-title" class="text-xl font-bold text-slate-900 mb-3">Análisis Térmico y Transferencia de Calor</h3>
+                        <p data-key="s2-desc" class="text-slate-600 font-light leading-relaxed">
+                            Evaluación de perfiles de temperatura, disipación térmica, conducción, convección y comportamiento de componentes expuestos a cargas térmicas severas.
+                        </p>
+                    </div>
+
+                    <!-- Servicio 3: FEM / FEA -->
+                    <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 font-bold mb-6">FEA</div>
+                        <h3 data-key="s3-title" class="text-xl font-bold text-slate-900 mb-3">Análisis Estructural (FEM / FEA)</h3>
+                        <p data-key="s3-desc" class="text-slate-600 font-light leading-relaxed">
+                            Validación de resistencia mecánica, concentración de esfuerzos, deformación estructural, optimización de peso y verificación bajo normas aplicables.
+                        </p>
+                    </div>
+
+                    <!-- Servicio 4: CAD -->
+                    <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center text-slate-700 font-bold mb-6">CAD</div>
+                        <h3 data-key="s4-title" class="text-xl font-bold text-slate-900 mb-3">Servicios Complementarios</h3>
+                        <p data-key="s4-desc" class="text-slate-600 font-light leading-relaxed">
+                            Modelado CAD 3D, elaboración o modificación de planos técnicos normalizados y soporte especializado de ingeniería asociado al proyecto.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. PROYECTOS EJECUTADOS (CARRUSEL SLIDER CON 10 PROYECTOS) -->
+        <section id="proyectos" class="py-20 bg-white border-b border-slate-200">
+            <div class="max-w-6xl mx-auto px-6">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                    <div>
+                        <h2 data-key="proj-title" class="text-3xl font-bold text-slate-900 mb-2">Proyectos Ejecutados</h2>
+                        <p data-key="proj-subtitle" class="text-slate-600 max-w-xl font-light">Explora nuestros casos de estudio y modelos analíticos desarrollados.</p>
+                    </div>
+                    <!-- Botones de Control del Slider -->
+                    <div class="flex gap-3 mt-4 md:mt-0">
+                        <button onclick="document.getElementById('slider').scrollBy({left: -360, behavior: 'smooth'})" class="w-11 h-11 bg-slate-100 hover:bg-slate-200 rounded-full text-slate-700 flex items-center justify-center transition-colors shadow-sm font-bold text-lg" aria-label="Anterior">
+                            &#8592;
+                        </button>
+                        <button onclick="document.getElementById('slider').scrollBy({left: 360, behavior: 'smooth'})" class="w-11 h-11 bg-slate-100 hover:bg-slate-200 rounded-full text-slate-700 flex items-center justify-center transition-colors shadow-sm font-bold text-lg" aria-label="Siguiente">
+                            &#8594;
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Contenedor Deslizable Horizontal -->
+                <div id="slider" class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-6 no-scrollbar">
+                    
+                    <!-- Proyecto 1 -->
+                    <div class="min-w-[300px] md:min-w-[340px] snap-start bg-slate-50 rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <img src="proyecto3.jpeg" alt="Ventilación en Naves Industriales" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <span class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 bg-blue-100 px-2.5 py-1 rounded">CFD</span>
+                            <h3 data-key="p1-title" class="text-base font-bold text-slate-900 mt-3 mb-2">Ventilación en Naves Industriales</h3>
+                            <p data-key="p1-desc" class="text-slate-600 text-xs font-light leading-relaxed">Modelado de velocidad de flujo y calidad de aire en plantas de procesamiento.</p>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 2 -->
+                    <div class="min-w-[300px] md:min-w-[340px] snap-start bg-slate-50 rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <img src="proyecto3.jpeg" alt="Optimización Estructural de Chasis" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <span class="text-[10px] font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-100 px-2.5 py-1 rounded">FEA</span>
+                            <h3 data-key="p2-title" class="text-base font-bold text-slate-900 mt-3 mb-2">Optimización Estructural de Chasis</h3>
+                            <p data-key="p2-desc" class="text-slate-600 text-xs font-light leading-relaxed">Análisis de esfuerzos Von Mises y reducción de peso en estructuras metálicas.</p>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 3 -->
+                    <div class="min-w-[300px] md:min-w-[340px] snap-start bg-slate-50 rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <img src="proyecto3.jpeg" alt="Intercambiadores de Calor" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <span class="text-[10px] font-semibold uppercase tracking-wider text-amber-600 bg-amber-100 px-2.5 py-1 rounded">Térmico</span>
+                            <h3 data-key="p3-title" class="text-base font-bold text-slate-900 mt-3 mb-2">Intercambiadores de Calor</h3>
+                            <p data-key="p3-desc" class="text-slate-600 text-xs font-light leading-relaxed">Evaluación de gradientes de temperatura y distribución de flujo térmico.</p>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 4 -->
+                    <div class="min-w-[300px] md:min-w-[340px] snap-start bg-slate-50 rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <img src="proyecto3.jpeg" alt="Simulación de Tuberías y Válvulas" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <span class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 bg-blue-100 px-2.5 py-1 rounded">CFD</span>
+                            <h3 data-key="p4-title" class="text-base font-bold text-slate-900 mt-3 mb-2">Simulación de Tuberías y Válvulas</h3>
+                            <p data-key="p4-desc" class="text-slate-600 text-xs font-light leading-relaxed">Cálculo de pérdida de presión y optimización de geometría interna.</p>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 5 -->
+                    <div class="min-w-[300px] md:min-w-[340px] snap-start bg-slate-50 rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <img src="proyecto3.jpeg" alt="Análisis de Fatiga en Recipientes" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <span class="text-[10px] font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-100 px-2.5 py-1 rounded">FEA</span>
+                            <h3 data-key="p5-title" class="text-base font-bold text-slate-900 mt-3 mb-2">Análisis de Fatiga en Recipientes</h3>
+                            <p data-key="p5-desc" class="text-slate-600 text-xs font-light leading-relaxed">Predicción de vida útil y ciclos de carga bajo presión fluctuante.</p>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 6 -->
+                    <div class="min-w-[300px] md:min-w-[340px] snap-start bg-slate-50 rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <img src="proyecto3.jpeg" alt="Aerodinámica Externa" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <span class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 bg-blue-100 px-2.5 py-1 rounded">CFD</span>
+                            <h3 data-key="p6-title" class="text-base font-bold text-slate-900 mt-3 mb-2">Aerodinámica Externa</h3>
+                            <p data-key="p6-desc" class="text-slate-600 text-xs font-light leading-relaxed">Evaluación de arrastre aerodinámico y fuerzas de sustentación.</p>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 7 -->
+                    <div class="min-w-[300px] md:min-w-[340px] snap-start bg-slate-50 rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <img src="proyecto3.jpeg" alt="Refrigeración de Gabinetes" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <span class="text-[10px] font-semibold uppercase tracking-wider text-amber-600 bg-amber-100 px-2.5 py-1 rounded">Térmico</span>
+                            <h3 data-key="p7-title" class="text-base font-bold text-slate-900 mt-3 mb-2">Refrigeración de Gabinetes</h3>
+                            <p data-key="p7-desc" class="text-slate-600 text-xs font-light leading-relaxed">Optimización de disipadores de calor y flujo convectivo en electrónica.</p>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 8 -->
+                    <div class="min-w-[300px] md:min-w-[340px] snap-start bg-slate-50 rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <img src="proyecto3.jpeg" alt="Validación de Estructuras Soldadas" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <span class="text-[10px] font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-100 px-2.5 py-1 rounded">FEA</span>
+                            <h3 data-key="p8-title" class="text-base font-bold text-slate-900 mt-3 mb-2">Validación de Estructuras Soldadas</h3>
+                            <p data-key="p8-desc" class="text-slate-600 text-xs font-light leading-relaxed">Análisis de concentración de esfuerzos en cordones de soldadura crítica.</p>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 9 -->
+                    <div class="min-w-[300px] md:min-w-[340px] snap-start bg-slate-50 rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <img src="proyecto3.jpeg" alt="Reingeniería de Componentes 3D" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <span class="text-[10px] font-semibold uppercase tracking-wider text-slate-700 bg-slate-200 px-2.5 py-1 rounded">CAD</span>
+                            <h3 data-key="p9-title" class="text-base font-bold text-slate-900 mt-3 mb-2">Reingeniería de Componentes 3D</h3>
+                            <p data-key="p9-desc" class="text-slate-600 text-xs font-light leading-relaxed">Digitalización CAD y ajuste de tolerancia para simulación posterior.</p>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 10 -->
+                    <div class="min-w-[300px] md:min-w-[340px] snap-start bg-slate-50 rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <img src="proyecto3.jpeg" alt="Mezcladores y Flujo Multifásico" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <span class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 bg-blue-100 px-2.5 py-1 rounded">CFD</span>
+                            <h3 data-key="p10-title" class="text-base font-bold text-slate-900 mt-3 mb-2">Mezcladores y Flujo Multifásico</h3>
+                            <p data-key="p10-desc" class="text-slate-600 text-xs font-light leading-relaxed">Simulación de interfaz líquido-gas en tanques de reacción agudizada.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. FORMULARIO DE CONTACTO CON ADJUNTO DE ARCHIVOS -->
+        <section id="contacto" class="py-20 bg-slate-50">
+            <div class="max-w-2xl mx-auto px-6">
+                <div class="text-center mb-10">
+                    <h2 data-key="form-title" class="text-3xl font-bold text-slate-900 mb-2">Contacto y Cotizaciones</h2>
+                    <p data-key="form-subtitle" class="text-slate-600 font-light">Escríbenos sobre requerimientos técnicos o solicitudes de servicio.</p>
+                </div>
+
+                <form action="https://formsubmit.co/comercial@dmd-engsolutions.com" method="POST" enctype="multipart/form-data" class="space-y-6 bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
+    
+                    <!-- Redirección opcional tras enviar el formulario -->
+                     <input type="hidden" name="_captcha" value="false">
+                      <input type="hidden" name="_subject" value="Nueva solicitud de cotización técnica - DMD">
+                    <div>
+                        <label data-key="f-name" for="nombre" class="block text-sm font-semibold text-slate-700 mb-2">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej. Ing. Carlos Pérez" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-800">
+                    </div>
+
+                    <div>
+                        <label data-key="f-email" for="correo" class="block text-sm font-semibold text-slate-700 mb-2">Correo electrónico corporativo</label>
+                        <input type="email" id="correo" name="correo" placeholder="nombre@empresa.com" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-800">
+                    </div>
+
+                    <div>
+                        <label data-key="f-service" for="servicio" class="block text-sm font-semibold text-slate-700 mb-2">Servicio de interés</label>
+                        <select id="servicio" name="servicio" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-800 bg-white">
+                            <option value="cfd" data-key="opt-cfd">CFD / Dinámica de Fluidos Computacional</option>
+                            <option value="termico" data-key="opt-thermal">Análisis Térmico</option>
+                            <option value="fea" data-key="opt-fea">Análisis Estructural (FEM / FEA)</option>
+                            <option value="cad" data-key="opt-cad">Diseño CAD 3D / Planos</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label data-key="f-msg" for="mensaje" class="block text-sm font-semibold text-slate-700 mb-2">Detalles del proyecto</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Describe brevemente el problema técnico o componente a evaluar..." required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-800"></textarea>
+                    </div>
+
+                    <div>
+                        <label data-key="f-file" for="archivo" class="block text-sm font-semibold text-slate-700 mb-2">Adjuntar información técnica (Planos, imágenes o PDF)</label>
+                        <input type="file" id="archivo" name="archivo" accept=".pdf,.png,.jpg,.jpeg,.zip,.rar,.dwg" class="w-full text-sm text-slate-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 cursor-pointer border border-slate-300 rounded-lg bg-white">
+                        <p data-key="file-hint" class="text-xs text-slate-500 mt-1">Formatos permitidos: PDF, DWG, ZIP, RAR, PNG, JPG (Máx. 10 MB)</p>
+                    </div>
+
+                    <button type="submit" data-key="btn-send" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-lg shadow transition-colors">
+                        Enviar Solicitud de Cotización
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="bg-slate-900 text-slate-400 py-10 border-t border-slate-800 text-sm">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+            <div>
+                <p class="font-semibold text-white">DMD Engineering Solutions S.A.S.</p>
+                <p data-key="foot-copy" class="text-xs text-slate-500 mt-1">&copy; 2026 Todos los derechos reservados.</p>
+            </div>
+            <div>
+                <p><span data-key="foot-contact">Contacto:</span> <a href="mailto:comercial@dmd-engsolutions.com" class="text-blue-400 hover:underline">comercial@dmd-engsolutions.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT PARA CAMBIO DE IDIOMA -->
+    <script>
+        const translations = {
+            es: {
+                "nav-nosotros": "Nosotros",
+                "nav-servicios": "Servicios",
+                "nav-proyectos": "Proyectos",
+                "nav-contacto": "Contacto",
+                "hero-title": "Diseño de detalle respaldado por simulación numérica computacional",
+                "hero-desc": "Evaluamos, validamos y optimizamos sus proyectos mediante CFD y FEA antes de realizar inversiones físicas en prototipos o fabricación.",
+                "hero-btn": "Solicitar Cotización Técnica",
+                "about-title": "Quiénes Somos",
+                "about-desc": "Somos una firma de consultoría constituida por tres ingenieros mecánicos especializados. Nuestro propósito es reducir la incertidumbre en decisiones de ingeniería de alta complejidad, entregando resultados técnicamente sólidos que optimizan costos, tiempos y rendimiento operativo.",
+                "serv-title": "Nuestros Servicios",
+                "serv-subtitle": "Especializados en análisis avanzado de ingeniería y simulación por computadora.",
+                "s1-title": "Análisis CFD y Flujo de Fluidos",
+                "s1-desc": "Simulación computacional de dinámica de fluidos para sistemas de ventilación, flujos internos o externos, comportamiento aerodinámico y optimización de pérdida de carga.",
+                "s2-title": "Análisis Térmico y Transferencia de Calor",
+                "s2-desc": "Evaluación de perfiles de temperatura, disipación térmica, conducción, convección y comportamiento de componentes expuestos a cargas térmicas severas.",
+                "s3-title": "Análisis Estructural (FEM / FEA)",
+                "s3-desc": "Validación de resistencia mecánica, concentración de esfuerzos, deformación estructural, optimización de peso y verificación bajo normas aplicables.",
+                "s4-title": "Servicios Complementarios",
+                "s4-desc": "Modelado CAD 3D, elaboración o modificación de planos técnicos normalizados y soporte especializado de ingeniería asociado al proyecto.",
+                "proj-title": "Proyectos Ejecutados",
+                "proj-subtitle": "Explora nuestros casos de estudio y modelos analíticos desarrollados.",
+                "p1-title": "Ventilación en Naves Industriales",
+                "p1-desc": "Modelado de velocidad de flujo y calidad de aire en plantas de procesamiento.",
+                "p2-title": "Optimización Estructural de Chasis",
+                "p2-desc": "Análisis de esfuerzos Von Mises y reducción de peso en estructuras metálicas.",
+                "p3-title": "Intercambiadores de Calor",
+                "p3-desc": "Evaluación de gradientes de temperatura y distribución de flujo térmico.",
+                "p4-title": "Simulación de Tuberías y Válvulas",
+                "p4-desc": "Cálculo de pérdida de presión y optimización de geometría interna.",
+                "p5-title": "Análisis de Fatiga en Recipientes",
+                "p5-desc": "Predicción de vida útil y ciclos de carga bajo presión fluctuante.",
+                "p6-title": "Aerodinámica Externa",
+                "p6-desc": "Evaluación de arrastre aerodinámico y fuerzas de sustentación.",
+                "p7-title": "Refrigeración de Gabinetes",
+                "p7-desc": "Optimización de disipadores de calor y flujo convectivo en electrónica.",
+                "p8-title": "Validación de Estructuras Soldadas",
+                "p8-desc": "Análisis de concentración de esfuerzos en cordones de soldadura crítica.",
+                "p9-title": "Reingeniería de Componentes 3D",
+                "p9-desc": "Digitalización CAD y ajuste de tolerancia para simulación posterior.",
+                "p10-title": "Mezcladores y Flujo Multifásico",
+                "p10-desc": "Simulación de interfaz líquido-gas en tanques de reacción agudizada.",
+                "form-title": "Contacto y Cotizaciones",
+                "form-subtitle": "Escríbenos sobre requerimientos técnicos o solicitudes de servicio.",
+                "f-name": "Nombre completo",
+                "f-email": "Correo electrónico corporativo",
+                "f-service": "Servicio de interés",
+                "opt-cfd": "CFD / Dinámica de Fluidos Computacional",
+                "opt-thermal": "Análisis Térmico",
+                "opt-fea": "Análisis Estructural (FEM / FEA)",
+                "opt-cad": "Diseño CAD 3D / Planos",
+                "f-msg": "Detalles del proyecto",
+                "f-file": "Adjuntar información técnica (Planos, imágenes o PDF)",
+                "file-hint": "Formatos permitidos: PDF, DWG, ZIP, RAR, PNG, JPG (Máx. 10 MB)",
+                "btn-send": "Enviar Solicitud de Cotización",
+                "foot-copy": "© 2026 Todos los derechos reservados.",
+                "foot-contact": "Contacto:"
+            },
+            en: {
+                "nav-nosotros": "About Us",
+                "nav-servicios": "Services",
+                "nav-proyectos": "Projects",
+                "nav-contacto": "Contact",
+                "hero-title": "Detailed engineering design backed by computational numerical simulation",
+                "hero-desc": "We evaluate, validate, and optimize your engineering projects using CFD and FEA before making physical investments in prototypes or manufacturing.",
+                "hero-btn": "Request Technical Quote",
+                "about-title": "About Us",
+                "about-desc": "We are a consulting firm founded by three specialized mechanical engineers. Our mission is to reduce uncertainty in high-complexity engineering decisions by delivering technically sound results that optimize cost, time, and operational performance.",
+                "serv-title": "Our Services",
+                "serv-subtitle": "Specialized in advanced engineering analysis and computer simulation.",
+                "s1-title": "CFD & Fluid Flow Analysis",
+                "s1-desc": "Computational Fluid Dynamics simulation for ventilation systems, internal or external flows, aerodynamic behavior, and pressure drop optimization.",
+                "s2-title": "Thermal Analysis & Heat Transfer",
+                "s2-desc": "Evaluation of temperature profiles, thermal dissipation, conduction, convection, and behavior of components exposed to severe thermal loads.",
+                "s3-title": "Structural Analysis (FEM / FEA)",
+                "s3-desc": "Mechanical strength validation, stress concentration, structural deformation, weight optimization, and compliance verification under applicable standards.",
+                "s4-title": "Complementary Services",
+                "s4-desc": "3D CAD modeling, preparation or modification of standardized technical drawings, and specialized engineering support.",
+                "proj-title": "Executed Projects",
+                "proj-subtitle": "Explore our case studies and analytical models developed.",
+                "p1-title": "Industrial Ventilation",
+                "p1-desc": "Flow velocity and air quality modeling in processing plants.",
+                "p2-title": "Chassis Structural Optimization",
+                "p2-desc": "Von Mises stress analysis and weight reduction in metallic structures.",
+                "p3-title": "Heat Exchangers Analysis",
+                "p3-desc": "Temperature gradient evaluation and thermal flow distribution.",
+                "p4-title": "Piping & Valves Simulation",
+                "p4-desc": "Pressure loss calculation and internal geometry optimization.",
+                "p5-title": "Pressure Vessel Fatigue Analysis",
+                "p5-desc": "Service life prediction and load cycling under fluctuating pressure.",
+                "p6-title": "External Aerodynamics",
+                "p6-desc": "Evaluation of aerodynamic drag and lift forces.",
+                "p7-title": "Enclosure Thermal Management",
+                "p7-desc": "Heat sink optimization and convective flow in electronics cooling.",
+                "p8-title": "Welded Joints Validation",
+                "p8-desc": "Stress concentration analysis in critical weld beads.",
+                "p9-title": "3D Component Reverse Engineering",
+                "p9-desc": "CAD digitization and tolerance adjustments for subsequent simulation.",
+                "p10-title": "Agitated Tanks & Multiphase Flow",
+                "p10-desc": "Liquid-gas interface simulation in stirred reaction tanks.",
+                "form-title": "Contact & Quotations",
+                "form-subtitle": "Reach out regarding technical requirements or service requests.",
+                "f-name": "Full Name",
+                "f-email": "Corporate Email Address",
+                "f-service": "Service of Interest",
+                "opt-cfd": "CFD / Computational Fluid Dynamics",
+                "opt-thermal": "Thermal Analysis",
+                "opt-fea": "Structural Analysis (FEM / FEA)",
+                "opt-cad": "3D CAD Design / Drawings",
+                "f-msg": "Project Details",
+                "f-file": "Attach Technical Information (Drawings, Images or PDF)",
+                "file-hint": "Allowed formats: PDF, DWG, ZIP, RAR, PNG, JPG (Max. 10 MB)",
+                "btn-send": "Submit Quote Request",
+                "foot-copy": "© 2026 All rights reserved.",
+                "foot-contact": "Contact:"
+            },
+            pt: {
+                "nav-nosotros": "Sobre Nós",
+                "nav-servicios": "Serviços",
+                "nav-proyectos": "Projetos",
+                "nav-contacto": "Contato",
+                "hero-title": "Design detalhado apoiado por simulação numérica computacional",
+                "hero-desc": "Avaliamos, validamos e otimizamos seus projetos de engenharia usando CFD e FEA antes de realizar investimentos físicos em protótipos ou fabricação.",
+                "hero-btn": "Solicitar Cotação Técnica",
+                "about-title": "Sobre Nós",
+                "about-desc": "Somos uma empresa de consultoria fundada por três engenheiros mecânicos especializados. Nosso objetivo é reduzir a incerteza em decisões de engenharia de alta complexidade, entregando resultados tecnicamente sólidos.",
+                "serv-title": "Nossos Serviços",
+                "serv-subtitle": "Especializados em análise avançada de engenharia e simulação computacional.",
+                "s1-title": "Análise CFD e Fluxo de Fluidos",
+                "s1-desc": "Simulação computacional de dinâmica dos fluidos para sistemas de ventilação, fluxos internos ou externos, comportamento aerodinâmico e otimização.",
+                "s2-title": "Análise Térmica e Transferência de Calor",
+                "s2-desc": "Avaliação de perfis de temperatura, dissipação térmica, condução, convecção e comportamento de componentes sob cargas térmicas severas.",
+                "s3-title": "Análise Estrutural (FEM / FEA)",
+                "s3-desc": "Validação de resistência mecânica, concentração de tensões, deformação estrutural, otimização de peso e verificação sob normas aplicáveis.",
+                "s4-title": "Serviços Complementares",
+                "s4-desc": "Modelagem CAD 3D, elaboração ou modificação de desenhos técnicos normalizados e suporte especializado de engenharia.",
+                "proj-title": "Projetos Executados",
+                "proj-subtitle": "Explore nossos estudos de caso e modelos analíticos desenvolvidos.",
+                "p1-title": "Ventilação em Galpões Industriais",
+                "p1-desc": "Modelagem de velocidade de fluxo e qualidade do ar em plantas de processamento.",
+                "p2-title": "Otimização Estrutural de Chassi",
+                "p2-desc": "Análise de tensões Von Mises e redução de peso em estruturas metálicas.",
+                "p3-title": "Trocadores de Calor",
+                "p3-desc": "Avaliação de gradientes de temperatura e distribuição de fluxo térmico.",
+                "p4-title": "Simulação de Tubulações e Válvulas",
+                "p4-desc": "Cálculo de perda de carga e otimização da geometria interna.",
+                "p5-title": "Análise de Fadiga em Vasos de Pressão",
+                "p5-desc": "Predição de vida útil e ciclos de carga sob pressão flutuante.",
+                "p6-title": "Aerodinâmica Externa",
+                "p6-desc": "Avaliação de atrito aerodinâmico e forças de sustentação.",
+                "p7-title": "Refrigeração de Gabinetes",
+                "p7-desc": "Otimização de dissipadores de calor e fluxo convectivo em eletrônica.",
+                "p8-title": "Validação de Estruturas Soldadas",
+                "p8-desc": "Análise de concentração de tensões em cordões de solda crítica.",
+                "p9-title": "Reengenharia de Componentes 3D",
+                "p9-desc": "Digitalização CAD e ajuste de tolerância para simulação posterior.",
+                "p10-title": "Misturadores e Fluxo Multifásico",
+                "p10-desc": "Simulação de interface líquido-gás em tanques de reação agitados.",
+                "form-title": "Contato e Cotações",
+                "form-subtitle": "Entre em contato sobre requisitos técnicos ou solicitações de serviço.",
+                "f-name": "Nome completo",
+                "f-email": "E-mail corporativo",
+                "f-service": "Serviço de interesse",
+                "opt-cfd": "CFD / Dinâmica dos Fluidos Computacional",
+                "opt-thermal": "Análise Térmica",
+                "opt-fea": "Análise Estrutural (FEM / FEA)",
+                "opt-cad": "Design CAD 3D / Desenhos",
+                "f-msg": "Detalhes do projeto",
+                "f-file": "Anexar informação técnica (Desenhos, imagens ou PDF)",
+                "file-hint": "Formatos permitidos: PDF, DWG, ZIP, RAR, PNG, JPG (Máx. 10 MB)",
+                "btn-send": "Enviar Solicitação de Cotação",
+                "foot-copy": "© 2026 Todos os direitos reservados.",
+                "foot-contact": "Contato:"
+            }
+        };
+
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll('[data-key]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+        }
+    </script>
+</body>
+</html>
