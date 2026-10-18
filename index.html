@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DMD Engineering Solutions | Simulación CFD, Análisis FEA & Diseño CAD</title>
+    <title>DMD Engineering Solutions | Consultoría en Simulación CFD, Análisis FEA & Diseño CAD</title>
     
     <!-- Favicon -->
     <link rel="icon" href="logo.jpeg" type="image/jpeg">
 
     <!-- Metadatos SEO Principales -->
-    <meta name="description" content="Firma de consultoría en ingeniería mecánica especializada en simulación numérica CFD, análisis estructural por elementos finitos (FEA), dinámica de fluidos y diseño CAD. Reduzca costos y valide sus diseños antes de prototipar o fabricar.">
-    <meta name="keywords" content="consultoría en ingeniería mecánica, simulación CFD, análisis por elementos finitos, análisis FEA, dinámica de fluidos, cálculo estructural, diseño CAD, modelado 3D, transferencia de calor, planos técnicos, optimización estructural">
+    <meta name="description" content="Firma de consultoría en ingeniería mecánica especializada en simulación numérica computacional (CFD y FEA), dinámica de fluidos, cálculo estructural y diseño CAD de detalle. Reduzca costos e incertidumbre validando sus diseños antes de prototipar o fabricar.">
+    <meta name="keywords" content="consultoría en ingeniería mecánica, simulación CFD, análisis por elementos finitos, análisis FEA, dinámica de fluidos, cálculo estructural, diseño CAD, modelado 3D, transferencia de calor, planos técnicos, optimización estructural, ANSYS, OpenFOAM">
     <meta name="author" content="DMD Engineering Solutions S.A.S.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="theme-color" content="#0f172a">
+    <meta name="theme-color" content="#070b14">
     <link rel="canonical" href="https://dmd-engsolutions.com/">
 
     <!-- Etiquetas Multilenguaje Hreflang -->
@@ -22,7 +22,7 @@
     <link rel="alternate" hreflang="pt" href="https://dmd-engsolutions.com/">
     <link rel="alternate" hreflang="x-default" href="https://dmd-engsolutions.com/">
 
-    <!-- Metadatos Open Graph (WhatsApp, LinkedIn, Facebook) -->
+    <!-- Metadatos Open Graph (LinkedIn, WhatsApp, Slack) -->
     <meta property="og:site_name" content="DMD Engineering Solutions S.A.S.">
     <meta property="og:title" content="DMD Engineering Solutions | Simulación CFD, Análisis FEA & Diseño CAD">
     <meta property="og:description" content="Diseño de detalle y validación técnica respaldada por simulación computacional (CFD y FEA), dinámica de fluidos, análisis térmico y modelado CAD.">
@@ -100,7 +100,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Análisis Estructural (FEM / FEA)",
-              "description": "Validación de resistencia mecánica, concentración de esfuerzos Von Mises, deformación estructural, optimización de peso y verificación bajo normas."
+              "description": "Validación de resistencia mecánica, concentración de esfuerzos Von Mises, deformación estructural, optimización de peso y verificación bajo normas aplicables."
             }
           },
           {
@@ -119,355 +119,682 @@
     <!-- Tipografía Inter desde Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Hoja de Estilos Compilada Estática (Sin dependencia de Tailwind Play CDN) -->
+    <!-- Hoja de Estilos Compilada Estática -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
+<body class="bg-[#070b14] text-slate-200 antialiased overflow-x-hidden selection:bg-blue-600 selection:text-white">
 
-    <!-- 1. ENCABEZADO Y NAVEGACIÓN -->
-    <header class="sticky top-0 z-40 bg-slate-900/95 backdrop-blur border-b border-slate-800 text-white">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap md:flex-nowrap justify-between items-center gap-y-3">
-            <a href="#inicio" class="text-lg font-bold tracking-tight flex items-center gap-2 mx-auto md:mx-0">
-                <span class="text-blue-500 font-extrabold tracking-wider">DMD</span>
-                <span class="text-xs font-light tracking-widest text-slate-400 uppercase">Engineering Solutions</span>
+    <!-- 1. ENCABEZADO Y NAVEGACIÓN CORPORATIVA -->
+    <header class="sticky top-0 z-50 bg-[#070b14]/85 backdrop-blur-xl border-b border-slate-800/80 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex flex-wrap md:flex-nowrap justify-between items-center gap-y-3">
+            
+            <!-- Identidad de Marca -->
+            <a href="#inicio" class="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-xl p-0.5">
+                <!-- Placa Corporativa Navbar -->
+                <div class="bg-white rounded-lg px-2.5 py-1 shadow-md shadow-black/30 border border-slate-200/90 flex items-center justify-center transition-all duration-300 group-hover:shadow-blue-500/25 group-hover:border-blue-400">
+                    <img src="logo.jpeg" alt="DMD Engineering Solutions" class="h-7 md:h-8 w-auto object-contain">
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                        <span class="text-base font-extrabold tracking-wider text-white leading-none">DMD</span>
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                    </div>
+                    <span class="text-[9px] font-medium tracking-widest text-slate-400 uppercase leading-tight mt-0.5">Engineering Solutions</span>
+                </div>
             </a>
-            <nav class="flex items-center gap-4 w-full md:w-auto overflow-x-auto no-scrollbar justify-center md:justify-end pb-1 md:pb-0">
-                <ul class="flex space-x-5 text-xs md:text-sm font-medium text-slate-300 whitespace-nowrap">
-                    <li><a href="#nosotros" data-key="nav-nosotros" class="hover:text-blue-400 transition-colors">Nosotros</a></li>
-                    <li><a href="#servicios" data-key="nav-servicios" class="hover:text-blue-400 transition-colors">Servicios</a></li>
-                    <li><a href="#proyectos" data-key="nav-proyectos" class="hover:text-blue-400 transition-colors">Proyectos</a></li>
-                    <li><a href="#contacto" data-key="nav-contacto" class="hover:text-blue-400 transition-colors">Contacto</a></li>
+
+            <!-- Badge de Especialidad (Desktop) -->
+            <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-800 text-[11px] text-slate-400 font-mono">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>CFD • FEA • SIMULATION SUITE</span>
+            </div>
+
+            <!-- Navegación y Selector de Idioma -->
+            <nav class="flex items-center gap-4 sm:gap-6 w-full md:w-auto overflow-x-auto no-scrollbar justify-center md:justify-end pb-1 md:pb-0">
+                <ul class="flex space-x-6 text-xs sm:text-sm font-medium text-slate-300 whitespace-nowrap">
+                    <li><a href="#nosotros" data-key="nav-nosotros" class="hover:text-blue-400 transition-colors py-1">Nosotros</a></li>
+                    <li><a href="#servicios" data-key="nav-servicios" class="hover:text-blue-400 transition-colors py-1">Servicios</a></li>
+                    <li><a href="#proyectos" data-key="nav-proyectos" class="hover:text-blue-400 transition-colors py-1">Proyectos</a></li>
+                    <li><a href="#contacto" data-key="nav-contacto" class="hover:text-blue-400 transition-colors py-1">Contacto</a></li>
                 </ul>
 
-                <select id="langSelect" onchange="changeLanguage(this.value)" aria-label="Seleccionar idioma" class="bg-slate-800 text-slate-200 text-xs font-semibold px-2 py-1 rounded border border-slate-700 outline-none cursor-pointer hover:border-blue-500 transition-colors flex-shrink-0">
-                    <option value="es">ES</option>
-                    <option value="en">EN</option>
-                    <option value="pt">PT</option>
-                </select>
+                <!-- Selector de Idioma -->
+                <div class="relative flex-shrink-0">
+                    <select id="langSelect" onchange="changeLanguage(this.value)" aria-label="Seleccionar idioma" class="bg-slate-900/95 text-slate-200 text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-slate-700/80 outline-none cursor-pointer hover:border-blue-500 transition-colors appearance-none pr-6">
+                        <option value="es">ES</option>
+                        <option value="en">EN</option>
+                        <option value="pt">PT</option>
+                    </select>
+                    <span class="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-slate-400">▼</span>
+                </div>
+
+                <!-- CTA Rápido Navbar (Desktop) -->
+                <a href="#contacto" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white px-3.5 py-1.5 rounded-lg border border-blue-400/30 transition-all shadow-sm flex-shrink-0">
+                    <span data-key="nav-quote-btn">Cotizar</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- 2. SECCIÓN PRINCIPAL (HERO) -->
-        <section id="inicio" class="bg-slate-900 text-white pt-10 pb-20 md:pt-14 md:pb-28 border-b border-slate-800 fade-in">
-            <div class="max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
-                <img src="logo.jpeg" alt="DMD Engineering Solutions - Simulación CFD & FEA" class="h-24 md:h-44 w-auto object-contain mb-8 transform transition-transform hover:scale-105 duration-500" onerror="this.onerror=null; this.src='https://via.placeholder.com/350x120/0f172a/3b82f6?text=DMD+LOGOTIPO';">
+        <!-- 2. SECCIÓN PRINCIPAL (HERO INDUSTRIAL) -->
+        <section id="inicio" class="relative bg-[#070b14] cad-grid cad-radial-glow border-b border-slate-800/80 pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden fade-in">
+            
+            <!-- Marcadores técnicos de esquina tipo viewport CAD -->
+            <div class="pointer-events-none absolute top-6 left-6 text-slate-700/60 font-mono text-[10px] select-none hidden md:block">+ [COORD: 0.00, 0.00]</div>
+            <div class="pointer-events-none absolute top-6 right-6 text-slate-700/60 font-mono text-[10px] select-none hidden md:block">[SYS: CAE_METRIC] +</div>
 
-                <h1 data-key="hero-title" class="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight text-slate-100 max-w-3xl">
+            <div class="max-w-5xl mx-auto px-6 text-center flex flex-col items-center relative z-10">
+                
+                <!-- Badge de Especialidad Industrial -->
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/70 text-xs font-medium text-slate-300 mb-8 shadow-inner">
+                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></span>
+                    <span class="font-mono text-blue-400 font-semibold tracking-wide">CAE SPECIALISTS</span>
+                    <span class="text-slate-600">•</span>
+                    <span data-key="hero-badge" class="tracking-normal text-slate-300">Consultoría en Ingeniería Numérica Avanzada</span>
+                </div>
+
+                <!-- Logotipo Principal en Placa Corporativa Incrustada -->
+                <div class="relative mb-8 group inline-block">
+                    <!-- Destello ambiental posterior enmarcando la placa -->
+                    <div class="absolute -inset-2 bg-gradient-to-r from-blue-600/20 via-cyan-500/20 to-blue-600/20 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <!-- Placa Corporativa con fondo blanco, bordes redondeados y sombra sutil -->
+                    <div class="relative bg-white rounded-2xl p-4 sm:p-5 md:p-6 shadow-2xl shadow-blue-950/60 border border-slate-100/90 flex items-center justify-center transition-transform duration-500 group-hover:scale-[1.02]">
+                        <img src="logo.jpeg" alt="DMD Engineering Solutions - Simulación CFD & FEA" class="h-24 sm:h-32 md:h-40 w-auto object-contain">
+                    </div>
+                </div>
+
+                <!-- Título H1 Semántico y de Impacto -->
+                <h1 data-key="hero-title" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-[1.15] text-white max-w-4xl mx-auto">
                     Diseño de detalle respaldado por simulación numérica computacional
                 </h1>
 
-                <p data-key="hero-desc" class="text-base md:text-lg text-slate-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                <!-- Subtítulo -->
+                <p data-key="hero-desc" class="text-base sm:text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
                     Evaluamos, validamos y optimizamos sus proyectos mediante CFD y FEA antes de realizar inversiones físicas en prototipos o fabricación.
                 </p>
 
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-lg">
-                    <a href="#contacto" data-key="hero-btn" class="w-full sm:w-auto inline-flex items-center justify-center bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-all transform hover:-translate-y-1 text-center">
-                        Solicitar Cotización Técnica
+                <!-- Botones de Acción (CTA) -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-lg mb-4">
+                    <a href="#contacto" data-key="hero-btn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-semibold px-8 py-4 rounded-xl shadow-lg shadow-blue-600/25 border border-blue-400/30 transition-all transform hover:-translate-y-0.5 text-center">
+                        <span>Solicitar Cotización Técnica</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                     </a>
-                    <a id="heroWaBtn" href="https://wa.me/573059074696?text=Hola,%20solicito%20informaci%C3%B3n%20t%C3%A9cnica%20sobre%20sus%20servicios%20de%20simulaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-6 py-4 rounded-lg shadow-lg transition-all transform hover:-translate-y-1 text-center">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    
+                    <a id="heroWaBtn" href="https://wa.me/573059074696?text=Hola,%20solicito%20informaci%C3%B3n%20t%C3%A9cnica%20sobre%20sus%20servicios%20de%20simulaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white font-semibold px-7 py-4 rounded-xl border border-slate-700/80 hover:border-emerald-500/50 transition-all transform hover:-translate-y-0.5 text-center shadow-md">
+                        <svg class="w-5 h-5 text-emerald-400 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                         <span data-key="hero-wa-btn">WhatsApp Directo</span>
                     </a>
                 </div>
+
+                <!-- Enlace rápido a casos de estudio -->
+                <a href="#proyectos" class="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-blue-400 transition-colors mt-2">
+                    <span data-key="hero-view-cases">Explorar casos de estudio y modelos analíticos</span>
+                    <span>↓</span>
+                </a>
+
+                <!-- MATRIZ DE RIGOR TÉCNICO Y VALOR B2B (KPI STRIP) -->
+                <div class="mt-14 pt-10 border-t border-slate-800/80 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-left w-full">
+                    
+                    <div class="p-4 sm:p-5 rounded-xl bg-slate-900/60 border border-slate-800/90 backdrop-blur-sm hover:border-slate-700 transition-colors">
+                        <div class="text-[11px] font-mono text-blue-400 uppercase tracking-wider mb-1.5">01 / CAPACIDAD</div>
+                        <h3 data-key="kpi-cfd-title" class="font-bold text-white text-sm sm:text-base mb-1">CFD & FEA de Alta Fidelidad</h3>
+                        <p data-key="kpi-cfd-desc" class="text-xs text-slate-400 font-light leading-relaxed">Dinámica de fluidos y mecánica computacional.</p>
+                    </div>
+
+                    <div class="p-4 sm:p-5 rounded-xl bg-slate-900/60 border border-slate-800/90 backdrop-blur-sm hover:border-slate-700 transition-colors">
+                        <div class="text-[11px] font-mono text-cyan-400 uppercase tracking-wider mb-1.5">02 / EXPERIENCIA</div>
+                        <h3 data-key="kpi-team-title" class="font-bold text-white text-sm sm:text-base mb-1">Equipo Especializado</h3>
+                        <p data-key="kpi-team-desc" class="text-xs text-slate-400 font-light leading-relaxed">Fundado por ingenieros mecánicos expertos.</p>
+                    </div>
+
+                    <div class="p-4 sm:p-5 rounded-xl bg-slate-900/60 border border-slate-800/90 backdrop-blur-sm hover:border-slate-700 transition-colors">
+                        <div class="text-[11px] font-mono text-indigo-400 uppercase tracking-wider mb-1.5">03 / VALOR B2B</div>
+                        <h3 data-key="kpi-opt-title" class="font-bold text-white text-sm sm:text-base mb-1">Validación Virtual</h3>
+                        <p data-key="kpi-opt-desc" class="text-xs text-slate-400 font-light leading-relaxed">Reducción de riesgos y costos antes de fabricación.</p>
+                    </div>
+
+                    <div class="p-4 sm:p-5 rounded-xl bg-slate-900/60 border border-slate-800/90 backdrop-blur-sm hover:border-slate-700 transition-colors">
+                        <div class="text-[11px] font-mono text-emerald-400 uppercase tracking-wider mb-1.5">04 / RIGOR</div>
+                        <h3 data-key="kpi-standards-title" class="font-bold text-white text-sm sm:text-base mb-1">Normativa Internacional</h3>
+                        <p data-key="kpi-standards-desc" class="text-xs text-slate-400 font-light leading-relaxed">Cumplimiento ASME, ISO, API y AWS.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- 3. QUIÉNES SOMOS & BROCHURE -->
-        <section id="nosotros" class="py-20 bg-white border-b border-slate-200">
-            <div class="max-w-5xl mx-auto px-6">
-                <div class="max-w-3xl mx-auto text-center mb-14 fade-in">
-                    <h2 data-key="about-title" class="text-3xl font-bold text-slate-900 mb-6">Quiénes Somos</h2>
-                    <p data-key="about-desc" class="text-lg text-slate-600 leading-relaxed font-light">
+        <!-- 3. QUIÉNES SOMOS & BROCHURE CORPORATIVO -->
+        <section id="nosotros" class="py-24 bg-[#0a0f1d] border-b border-slate-800/80 relative cad-grid-dense">
+            <div class="max-w-6xl mx-auto px-6">
+                
+                <!-- Encabezado de Sección -->
+                <div class="max-w-3xl mx-auto text-center mb-16 fade-in">
+                    <span class="text-xs font-mono font-semibold uppercase tracking-widest text-blue-400 bg-blue-950/60 border border-blue-800/60 px-3 py-1 rounded-full inline-block mb-3">01 / Capacidades Consultoras</span>
+                    <h2 data-key="about-title" class="text-3xl md:text-4xl font-extrabold text-white mb-6">Quiénes Somos</h2>
+                    <p data-key="about-desc" class="text-base md:text-lg text-slate-300 leading-relaxed font-light">
                         Somos una firma de consultoría fundada por tres ingenieros mecánicos especializados. Nuestro propósito es reducir la incertidumbre en decisiones de ingeniería de alta complejidad, entregando resultados técnicamente sólidos que optimizan costos, tiempos y rendimiento operativo.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-in">
-                    <div class="md:col-span-2 bg-slate-50 border border-slate-200 rounded-xl p-8 flex flex-col justify-center transition-all hover:shadow-md hover:border-blue-200">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-sm">✓</span>
-                            <h3 data-key="phil-title" class="text-xl font-bold text-slate-900">Adaptabilidad y Software Especializado</h3>
+                    
+                    <!-- Tarjeta de Filosofía y Adaptabilidad -->
+                    <div class="md:col-span-2 tech-card rounded-2xl p-8 sm:p-10 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3.5 mb-6">
+                                <div class="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/40 text-blue-400 flex items-center justify-center font-bold text-base">
+                                    ✓
+                                </div>
+                                <h3 data-key="phil-title" class="text-xl sm:text-2xl font-bold text-white">Adaptabilidad y Software Especializado</h3>
+                            </div>
+                            
+                            <p data-key="phil-desc" class="text-slate-300 font-light leading-relaxed mb-6 text-sm sm:text-base">
+                                Trabajamos con software computacional especializado de alto nivel y adaptamos nuestros flujos de trabajo a las plataformas y estándares que su empresa requiera.
+                            </p>
+                            
+                            <div class="bg-slate-900/80 border-l-2 border-blue-500 rounded-r-xl p-4 sm:p-5">
+                                <p data-key="phil-subdesc" class="text-slate-300 text-xs sm:text-sm font-normal italic leading-relaxed">
+                                    Frente a requerimientos no convencionales o desafíos técnicos fuera de catálogo, nuestro equipo de ingenieros formula, investiga y estructura la metodología numérica necesaria para encontrar la solución idónea a su problema.
+                                </p>
+                            </div>
                         </div>
-                        <p data-key="phil-desc" class="text-slate-600 font-light leading-relaxed mb-4">
-                            Trabajamos con software computacional especializado de alto nivel y adaptamos nuestros flujos de trabajo a las plataformas y estándares que su empresa requiera.
-                        </p>
-                        <p data-key="phil-subdesc" class="text-slate-700 text-sm font-normal border-l-2 border-blue-500 pl-4 py-1 italic">
-                            Frente a requerimientos no convencionales o desafíos técnicos fuera de catálogo, nuestro equipo de ingenieros formula, investiga y estructura la metodología numérica necesaria para encontrar la solución idónea a su problema.
-                        </p>
+
+                        <!-- Lista de Estándares -->
+                        <div class="pt-8 mt-6 border-t border-slate-800/80 flex flex-wrap gap-4 text-xs font-mono text-slate-400">
+                            <span class="inline-flex items-center gap-1.5"><span class="text-blue-400">▸</span> OpenFOAM / Fluent</span>
+                            <span class="inline-flex items-center gap-1.5"><span class="text-blue-400">▸</span> ANSYS Mechanical</span>
+                            <span class="inline-flex items-center gap-1.5"><span class="text-blue-400">▸</span> SolidWorks / Inventor CAD</span>
+                            <span class="inline-flex items-center gap-1.5"><span class="text-blue-400">▸</span> ASME Sec. VIII / AWS D1.1</span>
+                        </div>
                     </div>
 
-                    <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-xl p-8 flex flex-col justify-between shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-                        <div>
-                            <span data-key="brochure-badge" class="text-[10px] font-semibold uppercase tracking-wider text-blue-400 bg-blue-900/60 px-2.5 py-1 rounded">Documento Técnico</span>
-                            <h3 data-key="brochure-card-title" class="text-lg font-bold text-white mt-4 mb-2">Brochure Corporativo</h3>
-                            <p data-key="brochure-card-desc" class="text-slate-300 text-xs font-light leading-relaxed mb-6">
+                    <!-- Tarjeta de Brochure Corporativo -->
+                    <div class="bg-gradient-to-br from-slate-900 to-[#070b14] border border-blue-500/30 rounded-2xl p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden group">
+                        
+                        <!-- Destello de fondo -->
+                        <div class="absolute -right-12 -top-12 w-40 h-40 bg-blue-600/10 rounded-full blur-2xl group-hover:bg-blue-600/20 transition-all"></div>
+
+                        <div class="relative z-10">
+                            <div class="flex items-center justify-between mb-4">
+                                <span data-key="brochure-badge" class="text-[10px] font-mono font-semibold uppercase tracking-wider text-blue-400 bg-blue-950/80 border border-blue-800 px-2.5 py-1 rounded">Documento Técnico</span>
+                                <span class="text-xs font-mono text-slate-500">PDF • 2.5 MB</span>
+                            </div>
+
+                            <h3 data-key="brochure-card-title" class="text-xl font-bold text-white mt-2 mb-3">Brochure Corporativo</h3>
+                            
+                            <p data-key="brochure-card-desc" class="text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-6">
                                 Consulte nuestro portafolio de capacidades, alcance computacional y metodologías de trabajo aplicadas.
                             </p>
                         </div>
-                        <a id="brochureLink" href="DMDES.pdf" download="DMDES.pdf" class="w-full inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold py-3 px-4 rounded-lg transition-colors text-center shadow-md">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                            <span data-key="brochure-btn-txt">Descargar Portafolio (PDF)</span>
-                        </a>
+
+                        <div class="relative z-10 pt-4">
+                            <a id="brochureLink" href="DMDES.pdf" download="DMDES.pdf" class="w-full inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold py-3.5 px-4 rounded-xl transition-all text-center shadow-lg shadow-blue-600/20 border border-blue-400/30 transform group-hover:-translate-y-0.5">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                <span data-key="brochure-btn-txt">Descargar Portafolio (PDF)</span>
+                            </a>
+                            <p class="text-[10px] text-center text-slate-500 font-mono mt-2.5">Descarga disponible en ES, EN, PT</p>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- 4. CATÁLOGO DE SERVICIOS -->
-        <section id="servicios" class="py-20 bg-slate-50 border-b border-slate-200">
+        <!-- 4. CATÁLOGO DE SERVICIOS ESPECIALIZADOS -->
+        <section id="servicios" class="py-24 bg-[#070b14] border-b border-slate-800/80 relative">
             <div class="max-w-6xl mx-auto px-6">
-                <div class="text-center mb-16 fade-in">
-                    <h2 data-key="serv-title" class="text-3xl font-bold text-slate-900 mb-4">Nuestros Servicios</h2>
-                    <p data-key="serv-subtitle" class="text-slate-600 max-w-xl mx-auto font-light">Especializados en análisis avanzado de ingeniería y simulación por computadora.</p>
+                
+                <div class="text-center mb-16 fade-in max-w-3xl mx-auto">
+                    <span class="text-xs font-mono font-semibold uppercase tracking-widest text-blue-400 bg-blue-950/60 border border-blue-800/60 px-3 py-1 rounded-full inline-block mb-3">02 / Áreas de Dominio Técnico</span>
+                    <h2 data-key="serv-title" class="text-3xl md:text-4xl font-extrabold text-white mb-4">Nuestros Servicios</h2>
+                    <p data-key="serv-subtitle" class="text-slate-300 max-w-xl mx-auto font-light text-base md:text-lg">Especializados en análisis avanzado de ingeniería y simulación por computadora.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Cards -->
-                    <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-lg transform hover:-translate-y-2 transition-all duration-300 fade-in">
-                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-bold mb-6">CFD</div>
-                        <h3 data-key="s1-title" class="text-xl font-bold text-slate-900 mb-3">Análisis CFD y Flujo de Fluidos</h3>
-                        <p data-key="s1-desc" class="text-slate-600 font-light leading-relaxed">
+                    
+                    <!-- Servicio 1: CFD -->
+                    <div class="tech-card p-8 sm:p-10 rounded-2xl relative overflow-hidden group fade-in">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-12 h-12 bg-blue-600/20 border border-blue-500/40 rounded-xl flex items-center justify-center text-blue-400 font-mono font-bold text-sm">
+                                CFD
+                            </div>
+                            <span class="text-[11px] font-mono text-slate-500 uppercase">FLUID DYNAMICS</span>
+                        </div>
+                        
+                        <h3 data-key="s1-title" class="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                            Análisis CFD y Flujo de Fluidos
+                        </h3>
+                        
+                        <p data-key="s1-desc" class="text-slate-300 font-light leading-relaxed mb-6 text-sm sm:text-base">
                             Simulación computacional de dinámica de fluidos para sistemas de ventilación, flujos internos o externos, comportamiento aerodinámico y optimización de pérdida de carga.
                         </p>
+
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800/80">
+                            <span class="text-[10px] font-mono uppercase bg-slate-900 text-blue-400 border border-slate-800 px-2.5 py-1 rounded">Navier-Stokes</span>
+                            <span class="text-[10px] font-mono uppercase bg-slate-900 text-slate-300 border border-slate-800 px-2.5 py-1 rounded">Pérdida de Carga ΔP</span>
+                            <span class="text-[10px] font-mono uppercase bg-slate-900 text-slate-300 border border-slate-800 px-2.5 py-1 rounded">Aerodinámica</span>
+                            <span class="text-[10px] font-mono uppercase bg-slate-900 text-slate-300 border border-slate-800 px-2.5 py-1 rounded">Ventilación HVAC</span>
+                        </div>
                     </div>
 
-                    <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-lg transform hover:-translate-y-2 transition-all duration-300 fade-in" style="transition-delay: 100ms;">
-                        <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center text-amber-600 font-bold mb-6">FEM</div>
-                        <h3 data-key="s2-title" class="text-xl font-bold text-slate-900 mb-3">Análisis Térmico y Transferencia de Calor</h3>
-                        <p data-key="s2-desc" class="text-slate-600 font-light leading-relaxed">
+                    <!-- Servicio 2: Térmico -->
+                    <div class="tech-card p-8 sm:p-10 rounded-2xl relative overflow-hidden group fade-in" style="transition-delay: 100ms;">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-12 h-12 bg-amber-500/20 border border-amber-500/40 rounded-xl flex items-center justify-center text-amber-400 font-mono font-bold text-sm">
+                                FEM
+                            </div>
+                            <span class="text-[11px] font-mono text-slate-500 uppercase">THERMAL PHYSICS</span>
+                        </div>
+
+                        <h3 data-key="s2-title" class="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">
+                            Análisis Térmico y Transferencia de Calor
+                        </h3>
+                        
+                        <p data-key="s2-desc" class="text-slate-300 font-light leading-relaxed mb-6 text-sm sm:text-base">
                             Evaluación de perfiles de temperatura, disipación térmica, conducción, convección y comportamiento de componentes expuestos a cargas térmicas severas.
                         </p>
+
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800/80">
+                            <span class="text-[10px] font-mono uppercase bg-slate-900 text-amber-400 border border-slate-800 px-2.5 py-1 rounded">Convección & Conducción</span>
+                            <span class="text-[10px] font-mono uppercase bg-slate-900 text-slate-300 border border-slate-800 px-2.5 py-1 rounded">Intercambiadores CHT</span>
+                            <span class="text-[10px] font-mono uppercase bg-slate-900 text-slate-300 border border-slate-800 px-2.5 py-1 rounded">Gradiente Térmico</span>
+                            <span class="text-[10px] font-mono uppercase bg-slate-900 text-slate-300 border border-slate-800 px-2.5 py-1 rounded">Radiación</span>
+                        </div>
                     </div>
 
-                    <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-lg transform hover:-translate-y-2 transition-all duration-300 fade-in">
-                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 font-bold mb-6">FEA</div>
-                        <h3 data-key="s3-title" class="text-xl font-bold text-slate-900 mb-3">Análisis Estructural (FEM / FEA)</h3>
-                        <p data-key="s3-desc" class="text-slate-600 font-light leading-relaxed">
+                    <!-- Servicio 3: FEA -->
+                    <div class="tech-card p-8 sm:p-10 rounded-2xl relative overflow-hidden group fade-in">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-12 h-12 bg-indigo-500/20 border border-indigo-500/40 rounded-xl flex items-center justify-center text-indigo-400 font-mono font-bold text-sm">
+                                FEA
+                            </div>
+                            <span class="text-[11px] font-mono text-slate-500 uppercase">STRUCTURAL MECHANICS</span>
+                        </div>
+
+                        <h3 data-key="s3-title" class="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors">
+                            Análisis Estructural (FEM / FEA)
+                        </h3>
+                        
+                        <p data-key="s3-desc" class="text-slate-300 font-light leading-relaxed mb-6 text-sm sm:text-base">
                             Validación de resistencia mecánica, concentración de esfuerzos, deformación estructural, optimización de peso y verificación bajo normas aplicables.
                         </p>
+
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800/80">
+                            <span class="text-[10px] font-mono uppercase bg-slate-900 text-indigo-400 border border-slate-800 px-2.5 py-1 rounded">Von Mises Peak</span>
+                            <span class="text-[10px] font-mono uppercase bg-slate-900 text-slate-300 border border-slate-800 px-2.5 py-1 rounded">Flecha & Deflexión</span>
+                            <span class="text-[10px] font-mono uppercase bg-slate-900 text-slate-300 border border-slate-800 px-2.5 py-1 rounded">Factor de Seguridad</span>
+                            <span class="text-[10px] font-mono uppercase bg-slate-900 text-slate-300 border border-slate-800 px-2.5 py-1 rounded">Fatiga & Pandeo</span>
+                        </div>
                     </div>
 
-                    <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-lg transform hover:-translate-y-2 transition-all duration-300 fade-in" style="transition-delay: 100ms;">
-                        <div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center text-slate-700 font-bold mb-6">CAD</div>
-                        <h3 data-key="s4-title" class="text-xl font-bold text-slate-900 mb-3">Servicios Complementarios</h3>
-                        <p data-key="s4-desc" class="text-slate-600 font-light leading-relaxed">
+                    <!-- Servicio 4: CAD -->
+                    <div class="tech-card p-8 sm:p-10 rounded-2xl relative overflow-hidden group fade-in" style="transition-delay: 100ms;">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-12 h-12 bg-slate-700/40 border border-slate-600 rounded-xl flex items-center justify-center text-slate-300 font-mono font-bold text-sm">
+                                CAD
+                            </div>
+                            <span class="text-[11px] font-mono text-slate-500 uppercase">PARAMETRIC DESIGN</span>
+                        </div>
+
+                        <h3 data-key="s4-title" class="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-slate-300 transition-colors">
+                            Servicios Complementarios
+                        </h3>
+                        
+                        <p data-key="s4-desc" class="text-slate-300 font-light leading-relaxed mb-6 text-sm sm:text-base">
                             Modelado CAD 3D, elaboración o modificación de planos técnicos normalizados y soporte especializado de ingeniería asociado al proyecto.
                         </p>
+
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800/80">
+                            <span class="text-[10px] font-mono uppercase bg-slate-900 text-slate-300 border border-slate-800 px-2.5 py-1 rounded">Modelado 3D Paramétrico</span>
+                            <span class="text-[10px] font-mono uppercase bg-slate-900 text-slate-300 border border-slate-800 px-2.5 py-1 rounded">Planos de Taller</span>
+                            <span class="text-[10px] font-mono uppercase bg-slate-900 text-slate-300 border border-slate-800 px-2.5 py-1 rounded">Simbología Soldadura AWS</span>
+                            <span class="text-[10px] font-mono uppercase bg-slate-900 text-slate-300 border border-slate-800 px-2.5 py-1 rounded">Ensamblajes</span>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- 5. PROYECTOS EJECUTADOS -->
-        <section id="proyectos" class="py-20 bg-white border-b border-slate-200">
-            <div class="max-w-6xl mx-auto px-6">
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 fade-in">
+        <!-- 5. CASOS DE ESTUDIO TÉCNICOS (PROYECTOS EJECUTADOS) -->
+        <section id="proyectos" class="py-24 bg-[#0a0f1d] border-b border-slate-800/80 relative">
+            <div class="max-w-7xl mx-auto px-6">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 fade-in">
                     <div>
-                        <h2 data-key="proj-title" class="text-3xl font-bold text-slate-900 mb-2">Proyectos Ejecutados</h2>
-                        <p data-key="proj-subtitle" class="text-slate-600 max-w-xl font-light">Explora nuestros casos de estudio y modelos analíticos desarrollados.</p>
+                        <span class="text-xs font-mono font-semibold uppercase tracking-widest text-blue-400 bg-blue-950/60 border border-blue-800/60 px-3 py-1 rounded-full inline-block mb-3">03 / Portafolio Aplicado</span>
+                        <h2 data-key="proj-title" class="text-3xl md:text-4xl font-extrabold text-white mb-2">Proyectos Ejecutados</h2>
+                        <p data-key="proj-subtitle" class="text-slate-400 max-w-xl font-light text-sm sm:text-base">Explora nuestros casos de estudio y modelos analíticos desarrollados.</p>
                     </div>
-                    <div class="flex gap-3 mt-4 md:mt-0">
-                        <button onclick="document.getElementById('slider').scrollBy({left: -360, behavior: 'smooth'})" class="w-11 h-11 bg-slate-100 hover:bg-slate-200 rounded-full text-slate-700 flex items-center justify-center transition-colors shadow-sm font-bold text-lg" aria-label="Anterior">&#8592;</button>
-                        <button onclick="document.getElementById('slider').scrollBy({left: 360, behavior: 'smooth'})" class="w-11 h-11 bg-slate-100 hover:bg-slate-200 rounded-full text-slate-700 flex items-center justify-center transition-colors shadow-sm font-bold text-lg" aria-label="Siguiente">&#8594;</button>
+
+                    <!-- Controles de desplazamiento táctil del slider -->
+                    <div class="flex items-center gap-3 mt-6 md:mt-0">
+                        <span class="text-xs font-mono text-slate-500 mr-2 hidden sm:inline">DESPLAZAR</span>
+                        <button onclick="document.getElementById('slider').scrollBy({left: -380, behavior: 'smooth'})" class="w-11 h-11 bg-slate-900 hover:bg-blue-600 text-slate-300 hover:text-white rounded-xl border border-slate-800 hover:border-blue-500 flex items-center justify-center transition-all shadow-md focus:outline-none" aria-label="Caso anterior">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                        </button>
+                        <button onclick="document.getElementById('slider').scrollBy({left: 380, behavior: 'smooth'})" class="w-11 h-11 bg-slate-900 hover:bg-blue-600 text-slate-300 hover:text-white rounded-xl border border-slate-800 hover:border-blue-500 flex items-center justify-center transition-all shadow-md focus:outline-none" aria-label="Caso siguiente">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </button>
                     </div>
                 </div>
 
+                <!-- Contenedor Carrusel Horizontal de Casos de Estudio -->
                 <div id="slider" class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-8 pt-2 no-scrollbar fade-in">
                     
-                    <!-- P1 -->
-                    <div class="min-w-[300px] md:min-w-[340px] snap-start bg-slate-50 rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-                        <div class="relative overflow-hidden cursor-pointer" onclick="openLightbox('analisis2.1.png')">
-                            <img src="analisis2.1.png" alt="Aerodinámica en Movilidad Ligera" class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                                <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-semibold drop-shadow-md">⛶ Ampliar</span>
+                    <!-- P1: Aerodinámica -->
+                    <div class="min-w-[310px] md:min-w-[360px] snap-start tech-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+                        <div>
+                            <div class="relative overflow-hidden cursor-pointer bg-slate-950 aspect-[16/10]" onclick="openLightbox('analisis2.1.png', 'Aerodinámica en Movilidad Ligera • Simulación CFD')">
+                                <img src="analisis2.1.png" alt="Aerodinámica en Movilidad Ligera" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                                <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                                    <span data-key="tag-cfd" class="text-[10px] font-mono font-semibold uppercase tracking-wider text-blue-400 bg-blue-950/90 border border-blue-800/80 px-2.5 py-1 rounded">CFD</span>
+                                    <span class="text-[10px] font-mono text-slate-300 bg-slate-900/90 px-2 py-0.5 rounded border border-slate-800">3.8M Celdas</span>
+                                </div>
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <span class="text-white font-mono text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-600/90 border border-blue-400/40 shadow-lg">⛶ Abrir Vista Técnica</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 data-key="p1-title" class="text-base font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                                    Aerodinámica en Movilidad Ligera
+                                </h3>
+                                <p data-key="p1-desc" class="text-slate-400 text-xs font-light leading-relaxed mb-4">
+                                    Simulación de flujo externo, estela aerodinámica y evaluación de arrastre en vehículo de diseño especial.
+                                </p>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <span data-key="tag-cfd" class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 bg-blue-100 px-2.5 py-1 rounded">CFD</span>
-                            <h3 data-key="p1-title" class="text-base font-bold text-slate-900 mt-3 mb-2">Aerodinámica en Movilidad Ligera</h3>
-                            <p data-key="p1-desc" class="text-slate-600 text-xs font-light leading-relaxed">Simulación de flujo externo, estela aerodinámica y evaluación de arrastre en vehículo de diseño especial.</p>
+                        <div class="px-6 pb-6 pt-0 border-t border-slate-800/60 mt-auto">
+                            <span class="text-[10px] font-mono text-slate-500 uppercase block pt-3">Parámetro: Flujo Externo • Arrastre Cd</span>
                         </div>
                     </div>
 
-                    <!-- P2 -->
-                    <div class="min-w-[300px] md:min-w-[340px] snap-start bg-slate-50 rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-                        <div class="relative overflow-hidden cursor-pointer" onclick="openLightbox('proyecto1.4.png')">
-                            <img src="proyecto1.4.png" alt="Distribución de Flujo en Manifold" class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                                <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-semibold drop-shadow-md">⛶ Ampliar</span>
+                    <!-- P2: Manifold -->
+                    <div class="min-w-[310px] md:min-w-[360px] snap-start tech-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+                        <div>
+                            <div class="relative overflow-hidden cursor-pointer bg-slate-950 aspect-[16/10]" onclick="openLightbox('proyecto1.4.png', 'Distribución de Flujo en Manifold • Simulación CFD')">
+                                <img src="proyecto1.4.png" alt="Distribución de Flujo en Manifold" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                                <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                                    <span data-key="tag-cfd" class="text-[10px] font-mono font-semibold uppercase tracking-wider text-blue-400 bg-blue-950/90 border border-blue-800/80 px-2.5 py-1 rounded">CFD</span>
+                                    <span class="text-[10px] font-mono text-slate-300 bg-slate-900/90 px-2 py-0.5 rounded border border-slate-800">Líneas de Corriente</span>
+                                </div>
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <span class="text-white font-mono text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-600/90 border border-blue-400/40 shadow-lg">⛶ Abrir Vista Técnica</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 data-key="p2-title" class="text-base font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                                    Distribución de Flujo en Manifold
+                                </h3>
+                                <p data-key="p2-desc" class="text-slate-400 text-xs font-light leading-relaxed mb-4">
+                                    Líneas de corriente y cálculo de magnitudes de velocidad en cabezal de distribución multicanal.
+                                </p>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <span data-key="tag-cfd" class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 bg-blue-100 px-2.5 py-1 rounded">CFD</span>
-                            <h3 data-key="p2-title" class="text-base font-bold text-slate-900 mt-3 mb-2">Distribución de Flujo en Manifold</h3>
-                            <p data-key="p2-desc" class="text-slate-600 text-xs font-light leading-relaxed">Líneas de corriente y cálculo de magnitudes de velocidad en cabezal de distribución multicanal.</p>
+                        <div class="px-6 pb-6 pt-0 border-t border-slate-800/60 mt-auto">
+                            <span class="text-[10px] font-mono text-slate-500 uppercase block pt-3">Parámetro: Velocidad & ΔP Balance</span>
                         </div>
                     </div>
 
-                    <!-- P3 -->
-                    <div class="min-w-[300px] md:min-w-[340px] snap-start bg-slate-50 rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-                        <div class="relative overflow-hidden cursor-pointer" onclick="openLightbox('proyecto3.png')">
-                            <img src="proyecto3.png" alt="Gradiente Térmico en Serpentín Cónico" class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                                <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-semibold drop-shadow-md">⛶ Ampliar</span>
+                    <!-- P3: Serpentín Cónico (High-Res 1447x806) -->
+                    <div class="min-w-[310px] md:min-w-[360px] snap-start tech-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+                        <div>
+                            <div class="relative overflow-hidden cursor-pointer bg-slate-950 aspect-[16/10]" onclick="openLightbox('proyecto3.2.png', 'Gradiente Térmico en Serpentín Cónico • Análisis CHT')">
+                                <img src="proyecto3.2.png" alt="Gradiente Térmico en Serpentín Cónico" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                                <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                                    <span data-key="tag-thermal" class="text-[10px] font-mono font-semibold uppercase tracking-wider text-amber-400 bg-amber-950/90 border border-amber-800/80 px-2.5 py-1 rounded">Térmico</span>
+                                    <span class="text-[10px] font-mono text-slate-300 bg-slate-900/90 px-2 py-0.5 rounded border border-slate-800">Convección CHT</span>
+                                </div>
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <span class="text-white font-mono text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-600/90 border border-blue-400/40 shadow-lg">⛶ Abrir Vista Técnica</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 data-key="p3-title" class="text-base font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">
+                                    Gradiente Térmico en Serpentín Cónico
+                                </h3>
+                                <p data-key="p3-desc" class="text-slate-400 text-xs font-light leading-relaxed mb-4">
+                                    Mapeo de transferencia de calor y perfil de temperatura en intercambiador helicoidal cónico.
+                                </p>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <span data-key="tag-thermal" class="text-[10px] font-semibold uppercase tracking-wider text-amber-600 bg-amber-100 px-2.5 py-1 rounded">Térmico</span>
-                            <h3 data-key="p3-title" class="text-base font-bold text-slate-900 mt-3 mb-2">Gradiente Térmico en Serpentín Cónico</h3>
-                            <p data-key="p3-desc" class="text-slate-600 text-xs font-light leading-relaxed">Mapeo de transferencia de calor y perfil de temperatura en intercambiador helicoidal cónico.</p>
+                        <div class="px-6 pb-6 pt-0 border-t border-slate-800/60 mt-auto">
+                            <span class="text-[10px] font-mono text-slate-500 uppercase block pt-3">Parámetro: Perfil Térmico Multicanal</span>
                         </div>
                     </div>
 
-                    <!-- P4 -->
-                    <div class="min-w-[300px] md:min-w-[340px] snap-start bg-slate-50 rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-                        <div class="relative overflow-hidden cursor-pointer" onclick="openLightbox('analisis3.1.png')">
-                            <img src="analisis3.1.png" alt="Mallado de Intercambiador de Calor" class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                                <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-semibold drop-shadow-md">⛶ Ampliar</span>
+                    <!-- P4: Mallado Intercambiador -->
+                    <div class="min-w-[310px] md:min-w-[360px] snap-start tech-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+                        <div>
+                            <div class="relative overflow-hidden cursor-pointer bg-slate-950 aspect-[16/10]" onclick="openLightbox('analisis3.1.png', 'Mallado Tridimensional de Intercambiador de Calor')">
+                                <img src="analisis3.1.png" alt="Mallado de Intercambiador de Calor" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                                <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                                    <span data-key="tag-cfd-thermal" class="text-[10px] font-mono font-semibold uppercase tracking-wider text-amber-400 bg-amber-950/90 border border-amber-800/80 px-2.5 py-1 rounded">CFD / Térmico</span>
+                                    <span class="text-[10px] font-mono text-slate-300 bg-slate-900/90 px-2 py-0.5 rounded border border-slate-800">Malla Conforme</span>
+                                </div>
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <span class="text-white font-mono text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-600/90 border border-blue-400/40 shadow-lg">⛶ Abrir Vista Técnica</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 data-key="p4-title" class="text-base font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                                    Mallado de Intercambiador de Calor
+                                </h3>
+                                <p data-key="p4-desc" class="text-slate-400 text-xs font-light leading-relaxed mb-4">
+                                    Discretización espacial y refinamiento de malla tridimensional en intercambiador con deflectores.
+                                </p>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <span data-key="tag-cfd-thermal" class="text-[10px] font-semibold uppercase tracking-wider text-amber-600 bg-amber-100 px-2.5 py-1 rounded">CFD / Térmico</span>
-                            <h3 data-key="p4-title" class="text-base font-bold text-slate-900 mt-3 mb-2">Mallado de Intercambiador de Calor</h3>
-                            <p data-key="p4-desc" class="text-slate-600 text-xs font-light leading-relaxed">Discretización espacial y refinamiento de malla tridimensional en intercambiador con deflectores.</p>
+                        <div class="px-6 pb-6 pt-0 border-t border-slate-800/60 mt-auto">
+                            <span class="text-[10px] font-mono text-slate-500 uppercase block pt-3">Parámetro: Capas Límite y+ ~ 1</span>
                         </div>
                     </div>
 
-                    <!-- P5 -->
-                    <div class="min-w-[300px] md:min-w-[340px] snap-start bg-slate-50 rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-                        <div class="relative overflow-hidden cursor-pointer" onclick="openLightbox('analisis5.2.png')">
-                            <img src="analisis5.2.png" alt="Tensiones Von Mises en Brida" class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                                <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-semibold drop-shadow-md">⛶ Ampliar</span>
+                    <!-- P5: Brida Von Mises -->
+                    <div class="min-w-[310px] md:min-w-[360px] snap-start tech-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+                        <div>
+                            <div class="relative overflow-hidden cursor-pointer bg-slate-950 aspect-[16/10]" onclick="openLightbox('analisis5.2.png', 'Tensiones Von Mises en Ensamble de Brida • Análisis FEA')">
+                                <img src="analisis5.2.png" alt="Tensiones Von Mises en Brida" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                                <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                                    <span data-key="tag-fea" class="text-[10px] font-mono font-semibold uppercase tracking-wider text-indigo-400 bg-indigo-950/90 border border-indigo-800/80 px-2.5 py-1 rounded">FEA</span>
+                                    <span class="text-[10px] font-mono text-slate-300 bg-slate-900/90 px-2 py-0.5 rounded border border-slate-800">Von Mises Stress</span>
+                                </div>
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <span class="text-white font-mono text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-600/90 border border-blue-400/40 shadow-lg">⛶ Abrir Vista Técnica</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 data-key="p5-title" class="text-base font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
+                                    Tensiones Von Mises en Brida
+                                </h3>
+                                <p data-key="p5-desc" class="text-slate-400 text-xs font-light leading-relaxed mb-4">
+                                    Evaluación de concentración de esfuerzos y factor de seguridad bajo momentos y cargas remotas.
+                                </p>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <span data-key="tag-fea" class="text-[10px] font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-100 px-2.5 py-1 rounded">FEA</span>
-                            <h3 data-key="p5-title" class="text-base font-bold text-slate-900 mt-3 mb-2">Tensiones Von Mises en Brida</h3>
-                            <p data-key="p5-desc" class="text-slate-600 text-xs font-light leading-relaxed">Evaluación de concentración de esfuerzos y factor de seguridad bajo momentos y cargas remotas.</p>
+                        <div class="px-6 pb-6 pt-0 border-t border-slate-800/60 mt-auto">
+                            <span class="text-[10px] font-mono text-slate-500 uppercase block pt-3">Parámetro: Factor de Seguridad ASME</span>
                         </div>
                     </div>
 
-                    <!-- P6 -->
-                    <div class="min-w-[300px] md:min-w-[340px] snap-start bg-slate-50 rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-                        <div class="relative overflow-hidden cursor-pointer" onclick="openLightbox('analisis6.png')">
-                            <img src="analisis6.png" alt="Deformación y Flecha en Vigas" class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                                <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-semibold drop-shadow-md">⛶ Ampliar</span>
+                    <!-- P6: Deformación en Vigas -->
+                    <div class="min-w-[310px] md:min-w-[360px] snap-start tech-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+                        <div>
+                            <div class="relative overflow-hidden cursor-pointer bg-slate-950 aspect-[16/10]" onclick="openLightbox('analisis6.png', 'Deformación y Flecha Máxima en Vigas • Análisis Elastoestático')">
+                                <img src="analisis6.png" alt="Deformación y Flecha en Vigas" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                                <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                                    <span data-key="tag-fea" class="text-[10px] font-mono font-semibold uppercase tracking-wider text-indigo-400 bg-indigo-950/90 border border-indigo-800/80 px-2.5 py-1 rounded">FEA</span>
+                                    <span class="text-[10px] font-mono text-slate-300 bg-slate-900/90 px-2 py-0.5 rounded border border-slate-800">Flecha URES</span>
+                                </div>
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <span class="text-white font-mono text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-600/90 border border-blue-400/40 shadow-lg">⛶ Abrir Vista Técnica</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 data-key="p6-title" class="text-base font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
+                                    Deformación y Flecha en Vigas
+                                </h3>
+                                <p data-key="p6-desc" class="text-slate-400 text-xs font-light leading-relaxed mb-4">
+                                    Análisis elastoestático de desplazamientos y flecha máxima (URES) bajo tren de cargas puntuales.
+                                </p>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <span data-key="tag-fea" class="text-[10px] font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-100 px-2.5 py-1 rounded">FEA</span>
-                            <h3 data-key="p6-title" class="text-base font-bold text-slate-900 mt-3 mb-2">Deformación y Flecha en Vigas</h3>
-                            <p data-key="p6-desc" class="text-slate-600 text-xs font-light leading-relaxed">Análisis elastoestático de desplazamientos y flecha máxima (URES) bajo tren de cargas puntuales.</p>
+                        <div class="px-6 pb-6 pt-0 border-t border-slate-800/60 mt-auto">
+                            <span class="text-[10px] font-mono text-slate-500 uppercase block pt-3">Parámetro: Deflexión Máxima L/500</span>
                         </div>
                     </div>
 
-                    <!-- P7 -->
-                    <div class="min-w-[300px] md:min-w-[340px] snap-start bg-slate-50 rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-                        <div class="relative overflow-hidden cursor-pointer" onclick="openLightbox('proyecto 10.png')">
-                            <img src="proyecto 10.png" alt="Modelado 3D de Mezclador Helicoidal" class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                                <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-semibold drop-shadow-md">⛶ Ampliar</span>
+                    <!-- P7: Mezclador 3D -->
+                    <div class="min-w-[310px] md:min-w-[360px] snap-start tech-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+                        <div>
+                            <div class="relative overflow-hidden cursor-pointer bg-slate-950 aspect-[16/10]" onclick="openLightbox('proyecto 10.png', 'Modelado Paramétrico 3D de Mezclador Helicoidal')">
+                                <img src="proyecto 10.png" alt="Modelado 3D de Mezclador Helicoidal" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                                <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                                    <span data-key="tag-cad" class="text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-300 bg-slate-800/90 border border-slate-700 px-2.5 py-1 rounded">CAD</span>
+                                    <span class="text-[10px] font-mono text-slate-300 bg-slate-900/90 px-2 py-0.5 rounded border border-slate-800">Ensamble 3D</span>
+                                </div>
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <span class="text-white font-mono text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-600/90 border border-blue-400/40 shadow-lg">⛶ Abrir Vista Técnica</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 data-key="p7-title" class="text-base font-bold text-white mb-2 group-hover:text-slate-300 transition-colors">
+                                    Modelado 3D de Mezclador Helicoidal
+                                </h3>
+                                <p data-key="p7-desc" class="text-slate-400 text-xs font-light leading-relaxed mb-4">
+                                    Desarrollo paramétrico CAD y ensamblaje de rotor helicoidal de cintas cruzadas para mezcla industrial.
+                                </p>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <span data-key="tag-cad" class="text-[10px] font-semibold uppercase tracking-wider text-slate-700 bg-slate-200 px-2.5 py-1 rounded">CAD</span>
-                            <h3 data-key="p7-title" class="text-base font-bold text-slate-900 mt-3 mb-2">Modelado 3D de Mezclador Helicoidal</h3>
-                            <p data-key="p7-desc" class="text-slate-600 text-xs font-light leading-relaxed">Desarrollo paramétrico CAD y ensamblaje de rotor helicoidal de cintas cruzadas para mezcla industrial.</p>
+                        <div class="px-6 pb-6 pt-0 border-t border-slate-800/60 mt-auto">
+                            <span class="text-[10px] font-mono text-slate-500 uppercase block pt-3">Parámetro: Cintas Cruzadas ISO 2768</span>
                         </div>
                     </div>
 
-                    <!-- P8 -->
-                    <div class="min-w-[300px] md:min-w-[340px] snap-start bg-slate-50 rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-                        <div class="relative overflow-hidden cursor-pointer" onclick="openLightbox('plano1.png')">
-                            <img src="plano1.png" alt="Plano Técnico y Detalle de Soldadura" class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                                <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-semibold drop-shadow-md">⛶ Ampliar</span>
+                    <!-- P8: Plano Técnico -->
+                    <div class="min-w-[310px] md:min-w-[360px] snap-start tech-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+                        <div>
+                            <div class="relative overflow-hidden cursor-pointer bg-slate-950 aspect-[16/10]" onclick="openLightbox('plano1.png', 'Documentación Técnica y Plano de Soldadura Normalizado')">
+                                <img src="plano1.png" alt="Plano Técnico y Detalle de Soldadura" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                                <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                                    <span data-key="tag-drawings" class="text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-300 bg-slate-800/90 border border-slate-700 px-2.5 py-1 rounded">Planos</span>
+                                    <span class="text-[10px] font-mono text-slate-300 bg-slate-900/90 px-2 py-0.5 rounded border border-slate-800">ASME / AWS</span>
+                                </div>
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <span class="text-white font-mono text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-600/90 border border-blue-400/40 shadow-lg">⛶ Abrir Vista Técnica</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 data-key="p8-title" class="text-base font-bold text-white mb-2 group-hover:text-slate-300 transition-colors">
+                                    Plano Técnico y Detalle de Soldadura
+                                </h3>
+                                <p data-key="p8-desc" class="text-slate-400 text-xs font-light leading-relaxed mb-4">
+                                    Documentación técnica normalizada, corte de sección y especificación de cordones de soldadura bajo norma.
+                                </p>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <span data-key="tag-drawings" class="text-[10px] font-semibold uppercase tracking-wider text-slate-700 bg-slate-200 px-2.5 py-1 rounded">Planos</span>
-                            <h3 data-key="p8-title" class="text-base font-bold text-slate-900 mt-3 mb-2">Plano Técnico y Detalle de Soldadura</h3>
-                            <p data-key="p8-desc" class="text-slate-600 text-xs font-light leading-relaxed">Documentación técnica normalizada, corte de sección y especificación de cordones de soldadura bajo norma.</p>
+                        <div class="px-6 pb-6 pt-0 border-t border-slate-800/60 mt-auto">
+                            <span class="text-[10px] font-mono text-slate-500 uppercase block pt-3">Parámetro: AWS D1.1 & Tolerancias</span>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- 6. SECCIÓN DE CONTACTO Y COTIZACIONES -->
-        <section id="contacto" class="py-20 bg-slate-50">
+        <!-- 6. SECCIÓN DE CONTACTO Y COTIZACIONES (B2B INDUSTRIAL) -->
+        <section id="contacto" class="py-24 bg-[#070b14] cad-grid relative">
             <div class="max-w-6xl mx-auto px-6 fade-in">
-                <div class="text-center mb-14">
-                    <h2 data-key="form-title" class="text-3xl font-bold text-slate-900 mb-2">Contacto y Cotizaciones</h2>
-                    <p data-key="form-subtitle" class="text-slate-600 font-light max-w-xl mx-auto">Escríbenos sobre requerimientos técnicos o solicitudes de servicio para coordinar una evaluación de su proyecto.</p>
+                
+                <div class="text-center mb-16 max-w-3xl mx-auto">
+                    <span class="text-xs font-mono font-semibold uppercase tracking-widest text-blue-400 bg-blue-950/60 border border-blue-800/60 px-3 py-1 rounded-full inline-block mb-3">04 / Solicitudes Técnicas</span>
+                    <h2 data-key="form-title" class="text-3xl md:text-4xl font-extrabold text-white mb-3">Contacto y Cotizaciones</h2>
+                    <p data-key="form-subtitle" class="text-slate-400 font-light text-base md:text-lg">Escríbenos sobre requerimientos técnicos o solicitudes de servicio para coordinar una evaluación de su proyecto.</p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                     
                     <!-- BLOQUE DE CONTACTO DIRECTO CORPORATIVO -->
-                    <div class="lg:col-span-5 bg-white border border-slate-200 rounded-xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between space-y-6">
+                    <div class="lg:col-span-5 tech-card rounded-2xl p-7 sm:p-9 flex flex-col justify-between space-y-6">
                         <div>
                             <div class="flex items-center gap-2 mb-3">
-                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">
-                                    <span class="w-2 h-2 rounded-full bg-blue-600 mr-1.5 animate-pulse"></span>
-                                    Atención Inmediata
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-semibold bg-blue-950 text-blue-400 border border-blue-800">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-blue-400 mr-2 animate-pulse"></span>
+                                    ATENCIÓN INGENIERIL INMEDIATA
                                 </span>
                             </div>
-                            <h3 data-key="contact-direct-title" class="text-xl font-bold text-slate-900 mb-2">Canales de Atención Directa</h3>
-                            <p data-key="contact-direct-desc" class="text-sm text-slate-600 leading-relaxed font-light mb-6">
+                            
+                            <h3 data-key="contact-direct-title" class="text-xl sm:text-2xl font-bold text-white mb-2">Canales de Atención Directa</h3>
+                            
+                            <p data-key="contact-direct-desc" class="text-sm text-slate-300 leading-relaxed font-light mb-6">
                                 ¿Requiere una consulta rápida o prefiere hablar directamente con uno de nuestros ingenieros? Llámenos o inicie una conversación directa por WhatsApp.
                             </p>
 
-                            <div class="space-y-4">
+                            <div class="space-y-3.5">
                                 <!-- Enlace Directo WhatsApp -->
-                                <a id="waDirectBtn" href="https://wa.me/573059074696?text=Hola,%20solicito%20informaci%C3%B3n%20t%C3%A9cnica%20sobre%20sus%20servicios%20de%20simulaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-950 transition-all transform hover:-translate-y-0.5 group">
-                                    <div class="w-11 h-11 rounded-lg bg-emerald-600 text-white flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform shadow-sm">
+                                <a id="waDirectBtn" href="https://wa.me/573059074696?text=Hola,%20solicito%20informaci%C3%B3n%20t%C3%A9cnica%20sobre%20sus%20servicios%20de%20simulaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-800 hover:border-emerald-500/50 text-white transition-all transform hover:-translate-y-0.5 group">
+                                    <div class="w-11 h-11 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform shadow-sm">
                                         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                                     </div>
-                                    <div class="flex-1">
-                                        <span data-key="contact-wa-sub" class="text-xs uppercase tracking-wider font-semibold text-emerald-700 block">WhatsApp Corporativo</span>
-                                        <span class="text-base font-bold text-slate-900">+57 305 9074696</span>
+                                    <div class="flex-1 min-w-0">
+                                        <span data-key="contact-wa-sub" class="text-[11px] font-mono uppercase tracking-wider text-emerald-400 block">WhatsApp Corporativo</span>
+                                        <span class="text-sm sm:text-base font-bold text-white truncate block">+57 305 9074696</span>
                                     </div>
-                                    <span data-key="contact-wa-action" class="text-xs font-semibold text-emerald-700 bg-emerald-100 group-hover:bg-emerald-200 px-3 py-1.5 rounded-md transition-colors">Escribir</span>
+                                    <span data-key="contact-wa-action" class="text-xs font-semibold text-emerald-400 bg-emerald-950/80 border border-emerald-800 px-3 py-1.5 rounded-lg group-hover:bg-emerald-900 transition-colors">Escribir</span>
                                 </a>
 
                                 <!-- Enlace Directo Llamada -->
-                                <a href="tel:+573059074696" class="flex items-center gap-4 p-4 rounded-xl bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-950 transition-all transform hover:-translate-y-0.5 group">
-                                    <div class="w-11 h-11 rounded-lg bg-blue-600 text-white flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform shadow-sm">
+                                <a href="tel:+573059074696" class="flex items-center gap-4 p-4 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-800 hover:border-blue-500/50 text-white transition-all transform hover:-translate-y-0.5 group">
+                                    <div class="w-11 h-11 rounded-lg bg-blue-600/20 border border-blue-500/40 text-blue-400 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform shadow-sm">
                                         <svg class="w-5 h-5 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                                     </div>
-                                    <div class="flex-1">
-                                        <span data-key="contact-call-sub" class="text-xs uppercase tracking-wider font-semibold text-blue-700 block">Llamada Directa</span>
-                                        <span class="text-base font-bold text-slate-900">+57 305 9074696</span>
+                                    <div class="flex-1 min-w-0">
+                                        <span data-key="contact-call-sub" class="text-[11px] font-mono uppercase tracking-wider text-blue-400 block">Llamada Directa</span>
+                                        <span class="text-sm sm:text-base font-bold text-white truncate block">+57 305 9074696</span>
                                     </div>
-                                    <span data-key="contact-call-action" class="text-xs font-semibold text-blue-700 bg-blue-100 group-hover:bg-blue-200 px-3 py-1.5 rounded-md transition-colors">Llamar</span>
+                                    <span data-key="contact-call-action" class="text-xs font-semibold text-blue-400 bg-blue-950/80 border border-blue-800 px-3 py-1.5 rounded-lg group-hover:bg-blue-900 transition-colors">Llamar</span>
                                 </a>
 
                                 <!-- Correo Electrónico Directo -->
-                                <a href="mailto:comercial@dmd-engsolutions.com" class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-900 transition-all transform hover:-translate-y-0.5 group">
-                                    <div class="w-11 h-11 rounded-lg bg-slate-700 text-white flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform shadow-sm">
+                                <a href="mailto:comercial@dmd-engsolutions.com" class="flex items-center gap-4 p-4 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-white transition-all transform hover:-translate-y-0.5 group">
+                                    <div class="w-11 h-11 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform shadow-sm">
                                         <svg class="w-5 h-5 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                                     </div>
                                     <div class="flex-1 min-w-0">
-                                        <span data-key="contact-mail-sub" class="text-xs uppercase tracking-wider font-semibold text-slate-500 block">Correo Corporativo</span>
-                                        <span class="text-xs sm:text-sm font-bold text-slate-900 truncate block">comercial@dmd-engsolutions.com</span>
+                                        <span data-key="contact-mail-sub" class="text-[11px] font-mono uppercase tracking-wider text-slate-400 block">Correo Corporativo</span>
+                                        <span class="text-xs sm:text-sm font-bold text-white truncate block">comercial@dmd-engsolutions.com</span>
                                     </div>
                                 </a>
                             </div>
                         </div>
 
-                        <div class="border-t border-slate-200 pt-5 mt-2">
-                            <div class="flex items-start gap-2.5 text-xs text-slate-600">
-                                <svg class="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <!-- Garantía de Confidencialidad NDA & Horario -->
+                        <div class="border-t border-slate-800/80 pt-5 space-y-3">
+                            <div class="flex items-start gap-2.5 text-xs text-slate-400">
+                                <svg class="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                                 <div>
-                                    <span class="font-semibold text-slate-800">Horario de atención técnica:</span>
+                                    <span data-key="contact-nda-badge" class="font-semibold text-slate-200">Garantía de Confidencialidad Industrial:</span>
+                                    <p data-key="contact-nda-desc" class="text-slate-400 font-light mt-0.5 leading-relaxed">Tratamos sus modelos CAD, planos y datos bajo estrictos acuerdos de confidencialidad (NDA).</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-2.5 text-xs text-slate-400">
+                                <svg class="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                <div>
+                                    <span class="font-semibold text-slate-200">Horario de atención técnica:</span>
                                     <p data-key="contact-hours" class="mt-0.5 font-light">Lunes a Viernes: 8:00 AM – 6:00 PM (GMT-5)</p>
                                 </div>
                             </div>
@@ -476,25 +803,28 @@
 
                     <!-- FORMULARIO DE COTIZACIÓN TÉCNICA -->
                     <div class="lg:col-span-7">
-                        <form action="https://formsubmit.co/comercial@dmd-engsolutions.com" method="POST" enctype="multipart/form-data" class="space-y-6 bg-white p-6 md:p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                            <!-- Campos de Control FormSubmit -->
+                        <form action="https://formsubmit.co/comercial@dmd-engsolutions.com" method="POST" enctype="multipart/form-data" class="tech-card p-7 sm:p-9 rounded-2xl space-y-6">
+                            
+                            <!-- Campos de Control FormSubmit Obligatorios -->
                             <input type="hidden" name="_captcha" value="false">
                             <input type="hidden" name="_next" value="https://dmd-engsolutions.com/">
                             <input type="hidden" name="_subject" value="Nueva solicitud de cotización técnica - DMD">
 
-                            <div>
-                                <label data-key="f-name" for="nombre" class="block text-sm font-semibold text-slate-700 mb-2">Nombre completo</label>
-                                <input type="text" id="nombre" name="nombre" data-key-ph="ph-name" placeholder="Ej. Ing. Carlos Pérez" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-800">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label data-key="f-name" for="nombre" class="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-300 mb-2">Nombre completo</label>
+                                    <input type="text" id="nombre" name="nombre" data-key-ph="ph-name" placeholder="Ej. Ing. Carlos Pérez" required class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-white placeholder-slate-500 text-sm">
+                                </div>
+
+                                <div>
+                                    <label data-key="f-email" for="correo" class="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-300 mb-2">Correo corporativo</label>
+                                    <input type="email" id="correo" name="correo" data-key-ph="ph-email" placeholder="nombre@empresa.com" required class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-white placeholder-slate-500 text-sm">
+                                </div>
                             </div>
 
                             <div>
-                                <label data-key="f-email" for="correo" class="block text-sm font-semibold text-slate-700 mb-2">Correo electrónico corporativo</label>
-                                <input type="email" id="correo" name="correo" data-key-ph="ph-email" placeholder="nombre@empresa.com" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-800">
-                            </div>
-
-                            <div>
-                                <label data-key="f-service" for="servicio" class="block text-sm font-semibold text-slate-700 mb-2">Servicio de interés</label>
-                                <select id="servicio" name="servicio" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-800 bg-white">
+                                <label data-key="f-service" for="servicio" class="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-300 mb-2">Servicio de interés</label>
+                                <select id="servicio" name="servicio" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-white text-sm">
                                     <option value="cfd" data-key="opt-cfd">CFD / Dinámica de Fluidos Computacional</option>
                                     <option value="termico" data-key="opt-thermal">Análisis Térmico</option>
                                     <option value="fea" data-key="opt-fea">Análisis Estructural (FEM / FEA)</option>
@@ -503,17 +833,17 @@
                             </div>
 
                             <div>
-                                <label data-key="f-msg" for="mensaje" class="block text-sm font-semibold text-slate-700 mb-2">Detalles del proyecto</label>
-                                <textarea id="mensaje" name="mensaje" rows="4" data-key-ph="ph-msg" placeholder="Describe brevemente el problema técnico o componente a evaluar..." required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-800"></textarea>
+                                <label data-key="f-msg" for="mensaje" class="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-300 mb-2">Detalles del proyecto</label>
+                                <textarea id="mensaje" name="mensaje" rows="4" data-key-ph="ph-msg" placeholder="Describe brevemente el problema técnico o componente a evaluar..." required class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-white placeholder-slate-500 text-sm"></textarea>
                             </div>
 
                             <div>
-                                <label data-key="f-file" for="archivo" class="block text-sm font-semibold text-slate-700 mb-2">Adjuntar información técnica (Planos, imágenes o PDF)</label>
-                                <input type="file" id="archivo" name="attachment" accept=".pdf,.dwg,.zip,.rar,.png,.jpg,.jpeg" class="w-full text-sm text-slate-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 cursor-pointer border border-slate-300 rounded-lg bg-white">
-                                <p data-key="file-hint" class="text-xs text-slate-500 mt-1">Formatos permitidos: PDF, DWG, ZIP, RAR, PNG, JPG (Máx. 10 MB)</p>
+                                <label data-key="f-file" for="archivo" class="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-300 mb-2">Adjuntar información técnica (Planos, modelos o PDF)</label>
+                                <input type="file" id="archivo" name="attachment" accept=".pdf,.dwg,.zip,.rar,.png,.jpg,.jpeg" class="w-full text-xs text-slate-400 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-blue-600/20 file:text-blue-300 hover:file:bg-blue-600/30 cursor-pointer border border-slate-700/80 rounded-xl bg-slate-900/90">
+                                <p data-key="file-hint" class="text-[11px] font-mono text-slate-500 mt-2">Formatos permitidos: PDF, DWG, ZIP, RAR, PNG, JPG (Máx. 10 MB)</p>
                             </div>
 
-                            <button type="submit" data-key="btn-send" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-lg shadow-md transform hover:-translate-y-0.5 transition-all duration-300">
+                            <button type="submit" data-key="btn-send" class="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-600/20 border border-blue-400/30 transform hover:-translate-y-0.5 transition-all duration-300 text-sm tracking-wide uppercase">
                                 Enviar Solicitud de Cotización
                             </button>
                         </form>
@@ -524,33 +854,39 @@
         </section>
     </main>
 
-    <!-- PIE DE PÁGINA (FOOTER) -->
-    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-sm">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+    <!-- PIE DE PÁGINA CORPORATIVO -->
+    <footer class="bg-[#050811] text-slate-400 py-14 border-t border-slate-800/80 text-sm">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+            
             <div>
-                <p class="font-bold text-white text-base">DMD Engineering Solutions S.A.S.</p>
-                <p data-key="foot-tagline" class="text-xs text-slate-400 mt-1">Simulación numérica computacional (CFD & FEA) y diseño mecánico de precisión.</p>
+                <div class="flex items-center justify-center md:justify-start gap-3 mb-2">
+                    <div class="bg-white rounded-lg px-2 py-1 shadow-sm border border-slate-200/90 flex items-center justify-center">
+                        <img src="logo.jpeg" alt="DMD Logo" class="h-6 w-auto object-contain">
+                    </div>
+                    <span class="font-bold text-white text-base">DMD Engineering Solutions S.A.S.</span>
+                </div>
+                <p data-key="foot-tagline" class="text-xs text-slate-400">Simulación numérica computacional (CFD & FEA) y diseño mecánico de precisión.</p>
                 <p data-key="foot-copy" class="text-xs text-slate-500 mt-2">&copy; 2026 DMD Engineering Solutions S.A.S. Todos los derechos reservados.</p>
             </div>
             
-            <div class="flex flex-col sm:flex-row gap-5 sm:gap-6 items-center text-xs md:text-sm">
-                <!-- Teléfono Corporativo -->
+            <div class="flex flex-col sm:flex-row gap-6 items-center text-xs md:text-sm">
+                <!-- Teléfono -->
                 <div class="flex items-center gap-2">
                     <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                    <span data-key="foot-phone-lbl" class="text-slate-400">Tel:</span>
+                    <span data-key="foot-phone-lbl" class="text-slate-500">Tel:</span>
                     <a href="tel:+573059074696" class="text-slate-200 hover:text-blue-400 font-medium transition-colors">+57 305 9074696</a>
                 </div>
 
-                <!-- WhatsApp Directo -->
+                <!-- WhatsApp -->
                 <div class="flex items-center gap-2">
                     <svg class="w-4 h-4 text-emerald-400 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                     <a id="waFootBtn" href="https://wa.me/573059074696?text=Hola,%20solicito%20informaci%C3%B3n%20t%C3%A9cnica%20sobre%20sus%20servicios%20de%20simulaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-medium transition-colors">WhatsApp</a>
                 </div>
 
-                <!-- Correo Electrónico -->
+                <!-- Correo -->
                 <div class="flex items-center gap-2">
                     <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                    <span data-key="foot-contact" class="text-slate-400">Contacto:</span>
+                    <span data-key="foot-contact" class="text-slate-500">Contacto:</span>
                     <a href="mailto:comercial@dmd-engsolutions.com" class="text-blue-400 hover:underline transition-colors">comercial@dmd-engsolutions.com</a>
                 </div>
             </div>
@@ -559,15 +895,21 @@
 
     <!-- BOTÓN FLOTANTE DIRECTO DE WHATSAPP -->
     <aside aria-label="Contacto por WhatsApp" class="fixed bottom-6 right-6 z-40">
-        <a id="floatingWaLink" href="https://wa.me/573059074696?text=Hola,%20solicito%20informaci%C3%B3n%20t%C3%A9cnica%20sobre%20sus%20servicios%20de%20simulaci%C3%B3n." target="_blank" rel="noopener noreferrer" aria-label="Contactar a DMD por WhatsApp" class="w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110 duration-300 whatsapp-pulse focus:outline-none focus:ring-4 focus:ring-emerald-300">
+        <a id="floatingWaLink" href="https://wa.me/573059074696?text=Hola,%20solicito%20informaci%C3%B3n%20t%C3%A9cnica%20sobre%20sus%20servicios%20de%20simulaci%C3%B3n." target="_blank" rel="noopener noreferrer" aria-label="Contactar a DMD por WhatsApp" class="w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110 duration-300 whatsapp-pulse focus:outline-none focus:ring-4 focus:ring-emerald-400/40">
             <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
         </a>
     </aside>
 
-    <!-- LIGHTBOX PARA IMÁGENES -->
-    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/90 hidden flex items-center justify-center p-4 opacity-0" onclick="closeLightbox()">
-        <button class="absolute top-4 right-6 text-white text-4xl font-bold hover:text-blue-400 transition-colors" aria-label="Cerrar visor">&times;</button>
-        <img id="lightbox-img" src="" alt="Ampliación técnica" class="max-w-full max-h-full rounded-lg shadow-2xl transform scale-95 transition-transform duration-300" onclick="event.stopPropagation()">
+    <!-- LIGHTBOX PARA ANÁLISIS E IMÁGENES TÉCNICAS -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md hidden flex flex-col items-center justify-center p-4 sm:p-6 opacity-0" onclick="closeLightbox()">
+        <div class="w-full max-w-6xl flex justify-between items-center mb-3 px-2" onclick="event.stopPropagation()">
+            <div id="lightbox-caption" class="text-xs sm:text-sm font-mono text-slate-300 truncate max-w-md">Vista Técnica de Ingeniería</div>
+            <button onclick="closeLightbox()" class="text-slate-400 hover:text-white text-3xl font-bold transition-colors px-2 py-1 focus:outline-none" aria-label="Cerrar visor">&times;</button>
+        </div>
+        <div class="relative max-w-full max-h-[85vh] flex items-center justify-center" onclick="event.stopPropagation()">
+            <img id="lightbox-img" src="" alt="Ampliación técnica" class="max-w-full max-h-[80vh] rounded-xl shadow-2xl border border-slate-700/80 transform scale-95 transition-transform duration-300 object-contain">
+        </div>
+        <div class="text-[11px] font-mono text-slate-500 mt-3 select-none">Presiona ESC o haz clic fuera para cerrar</div>
     </div>
 
     <!-- SCRIPT MULTILENGUAJE E INTERACCIONES -->
@@ -579,10 +921,21 @@
                 "nav-servicios": "Servicios",
                 "nav-proyectos": "Proyectos",
                 "nav-contacto": "Contacto",
+                "nav-quote-btn": "Cotizar",
+                "hero-badge": "Consultoría en Ingeniería Numérica Avanzada",
                 "hero-title": "Diseño de detalle respaldado por simulación numérica computacional",
                 "hero-desc": "Evaluamos, validamos y optimizamos sus proyectos mediante CFD y FEA antes de realizar inversiones físicas en prototipos o fabricación.",
                 "hero-btn": "Solicitar Cotización Técnica",
                 "hero-wa-btn": "WhatsApp Directo",
+                "hero-view-cases": "Explorar casos de estudio y modelos analíticos",
+                "kpi-cfd-title": "CFD & FEA de Alta Fidelidad",
+                "kpi-cfd-desc": "Dinámica de fluidos y mecánica computacional.",
+                "kpi-team-title": "Equipo Especializado",
+                "kpi-team-desc": "Fundado por ingenieros mecánicos expertos.",
+                "kpi-opt-title": "Validación Virtual",
+                "kpi-opt-desc": "Reducción de riesgos y costos antes de fabricación.",
+                "kpi-standards-title": "Normativa Internacional",
+                "kpi-standards-desc": "Cumplimiento ASME, ISO, API y AWS.",
                 "about-title": "Quiénes Somos",
                 "about-desc": "Somos una firma de consultoría fundada por tres ingenieros mecánicos especializados. Nuestro propósito es reducir la incertidumbre en decisiones de ingeniería de alta complejidad, entregando resultados técnicamente sólidos que optimizan costos, tiempos y rendimiento operativo.",
                 "phil-title": "Adaptabilidad y Software Especializado",
@@ -637,15 +990,17 @@
                 "contact-call-action": "Llamar",
                 "contact-mail-sub": "Correo Corporativo",
                 "contact-hours": "Lunes a Viernes: 8:00 AM – 6:00 PM (GMT-5)",
+                "contact-nda-badge": "Garantía de Confidencialidad Industrial:",
+                "contact-nda-desc": "Tratamos sus modelos CAD, planos y datos bajo estrictos acuerdos de confidencialidad (NDA).",
                 "f-name": "Nombre completo",
-                "f-email": "Correo electrónico corporativo",
+                "f-email": "Correo corporativo",
                 "f-service": "Servicio de interés",
                 "opt-cfd": "CFD / Dinámica de Fluidos Computacional",
                 "opt-thermal": "Análisis Térmico",
                 "opt-fea": "Análisis Estructural (FEM / FEA)",
                 "opt-cad": "Diseño CAD 3D / Planos",
                 "f-msg": "Detalles del proyecto",
-                "f-file": "Adjuntar información técnica (Planos, imágenes o PDF)",
+                "f-file": "Adjuntar información técnica (Planos, modelos o PDF)",
                 "file-hint": "Formatos permitidos: PDF, DWG, ZIP, RAR, PNG, JPG (Máx. 10 MB)",
                 "btn-send": "Enviar Solicitud de Cotización",
                 "foot-tagline": "Simulación numérica computacional (CFD & FEA) y diseño mecánico de precisión.",
@@ -662,10 +1017,21 @@
                 "nav-servicios": "Services",
                 "nav-proyectos": "Projects",
                 "nav-contacto": "Contact",
+                "nav-quote-btn": "Quote",
+                "hero-badge": "Advanced Numerical Engineering Consulting",
                 "hero-title": "Detailed engineering design backed by computational numerical simulation",
                 "hero-desc": "We evaluate, validate, and optimize your engineering projects using CFD and FEA before making physical investments in prototypes or manufacturing.",
                 "hero-btn": "Request Technical Quote",
                 "hero-wa-btn": "Direct WhatsApp",
+                "hero-view-cases": "Explore case studies and analytical models",
+                "kpi-cfd-title": "High-Fidelity CFD & FEA",
+                "kpi-cfd-desc": "Fluid dynamics & computational mechanics.",
+                "kpi-team-title": "Specialized Team",
+                "kpi-team-desc": "Founded by expert mechanical engineers.",
+                "kpi-opt-title": "Virtual Validation",
+                "kpi-opt-desc": "Risk & cost reduction prior to manufacturing.",
+                "kpi-standards-title": "International Standards",
+                "kpi-standards-desc": "Compliance with ASME, ISO, API & AWS.",
                 "about-title": "About Us",
                 "about-desc": "We are an engineering consulting firm founded by three specialized mechanical engineers. Our mission is to reduce uncertainty in high-complexity engineering decisions by delivering technically sound results that optimize cost, time, and operational performance.",
                 "phil-title": "Adaptability & Specialized Software",
@@ -720,6 +1086,8 @@
                 "contact-call-action": "Call",
                 "contact-mail-sub": "Corporate Email",
                 "contact-hours": "Monday to Friday: 8:00 AM – 6:00 PM (GMT-5)",
+                "contact-nda-badge": "Industrial Confidentiality Guarantee:",
+                "contact-nda-desc": "We handle all CAD models, technical drawings and data under strict Non-Disclosure Agreements (NDA).",
                 "f-name": "Full Name",
                 "f-email": "Corporate Email Address",
                 "f-service": "Service of Interest",
@@ -728,7 +1096,7 @@
                 "opt-fea": "Structural Analysis (FEM / FEA)",
                 "opt-cad": "3D CAD Design / Drawings",
                 "f-msg": "Project Details",
-                "f-file": "Attach Technical Information (Drawings, Images or PDF)",
+                "f-file": "Attach Technical Information (Drawings, Models or PDF)",
                 "file-hint": "Allowed formats: PDF, DWG, ZIP, RAR, PNG, JPG (Max. 10 MB)",
                 "btn-send": "Submit Quote Request",
                 "foot-tagline": "Advanced computational numerical simulation (CFD & FEA) and precision mechanical design.",
@@ -745,10 +1113,21 @@
                 "nav-servicios": "Serviços",
                 "nav-proyectos": "Projetos",
                 "nav-contacto": "Contato",
+                "nav-quote-btn": "Cotar",
+                "hero-badge": "Consultoria em Engenharia Numérica Avançada",
                 "hero-title": "Design detalhado apoiado por simulação numérica computacional",
                 "hero-desc": "Avaliamos, validamos e otimizamos seus projetos de engenharia usando CFD e FEA antes de realizar investimentos físicos em protótipos ou fabricação.",
                 "hero-btn": "Solicitar Cotação Técnica",
                 "hero-wa-btn": "WhatsApp Direto",
+                "hero-view-cases": "Explorar estudos de caso e modelos analíticos",
+                "kpi-cfd-title": "CFD e FEA de Alta Fidelidade",
+                "kpi-cfd-desc": "Dinâmica dos fluidos e mecânica computacional.",
+                "kpi-team-title": "Equipe Especializada",
+                "kpi-team-desc": "Fundado por engenheiros mecânicos especialistas.",
+                "kpi-opt-title": "Validação Virtual",
+                "kpi-opt-desc": "Redução de riscos e custos antes da fabricação.",
+                "kpi-standards-title": "Normas Internacionais",
+                "kpi-standards-desc": "Conformidade com ASME, ISO, API e AWS.",
                 "about-title": "Sobre Nós",
                 "about-desc": "Somos uma empresa de consultoria fundada por três engenheiros mecânicos especializados. Nosso objetivo é reduzir a incerteza em decisões de engenharia de alta complexidade, entregando resultados tecnicamente sólidos.",
                 "phil-title": "Adaptabilidade e Softwares Especializados",
@@ -782,7 +1161,7 @@
                 "p2-title": "Distribuição de Flujo em Manifold",
                 "p2-desc": "Linhas de corrente e magnitude de velocidade em coletor de distribuição multicanal.",
                 "p3-title": "Gradiente Térmico em Serpentina Cônica",
-                "p3-desc": "Mapeamento de transferência de calor e perfil de temperatura em trocador helicoidal cônico.",
+                "p3-desc": "Mapeamento de transferência de calor e perfil de temperatura em trocador helicoidal cónico.",
                 "p4-title": "Discretização de Malha em Trocador",
                 "p4-desc": "Discretização espacial 3D e refinamento de malha em trocador de calor com chicanas.",
                 "p5-title": "Tensões Von Mises em Flange",
@@ -803,6 +1182,8 @@
                 "contact-call-action": "Ligar",
                 "contact-mail-sub": "E-mail Corporativo",
                 "contact-hours": "Segunda a Sexta: 8:00 AM – 6:00 PM (GMT-5)",
+                "contact-nda-badge": "Garantia de Confidencialidade Industrial:",
+                "contact-nda-desc": "Tratamos seus modelos CAD, desenhos e dados sob rigorosos acordos de confidencialidade (NDA).",
                 "f-name": "Nome completo",
                 "f-email": "E-mail corporativo",
                 "f-service": "Serviço de interesse",
@@ -811,7 +1192,7 @@
                 "opt-fea": "Análise Estrutural (FEM / FEA)",
                 "opt-cad": "Design CAD 3D / Desenhos",
                 "f-msg": "Detalhes do projeto",
-                "f-file": "Anexar informação técnica (Desenhos, imagens ou PDF)",
+                "f-file": "Anexar informação técnica (Desenhos, modelos ou PDF)",
                 "file-hint": "Formatos permitidos: PDF, DWG, ZIP, RAR, PNG, JPG (Máx. 10 MB)",
                 "btn-send": "Enviar Solicitação de Cotação",
                 "foot-tagline": "Simulação numérica computacional (CFD & FEA) e engenharia mecânica de precisão.",
@@ -863,7 +1244,7 @@
 
         // Animación Fade-in con scroll (Intersection Observer)
         document.addEventListener("DOMContentLoaded", () => {
-            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.12 };
             const observer = new IntersectionObserver((entries, obs) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -878,13 +1259,17 @@
             });
         });
 
-        // Lógica del Lightbox para imágenes técnicas
+        // Lógica del Lightbox Técnico para ampliación de modelos e imágenes
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
 
-        function openLightbox(src) {
+        function openLightbox(src, captionText) {
             if (!lightbox || !lightboxImg) return;
             lightboxImg.src = src;
+            if (lightboxCaption && captionText) {
+                lightboxCaption.textContent = captionText;
+            }
             lightbox.classList.remove('hidden');
             setTimeout(() => {
                 lightbox.classList.remove('opacity-0');
