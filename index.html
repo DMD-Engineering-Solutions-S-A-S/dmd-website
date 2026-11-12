@@ -123,6 +123,8 @@
     
     <!-- Hoja de Estilos Compilada Estática -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Animación CFD del Hero (canvas nativo, sin librerías) -->
+    <script src="cfd-flow.js" defer></script>
 </head>
 <body class="bg-[#070b14] text-slate-200 antialiased overflow-x-hidden selection:bg-blue-600 selection:text-white">
 
@@ -171,9 +173,9 @@
                 </div>
 
                 <!-- CTA Rápido Navbar (Desktop) -->
-                <a href="#contacto" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white px-3.5 py-1.5 rounded-lg border border-blue-400/30 transition-all shadow-sm flex-shrink-0">
+                <a href="#contacto" class="btn-vec hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white px-3.5 py-1.5 rounded-lg border border-blue-400/30 transition-all shadow-sm flex-shrink-0">
                     <span data-key="nav-quote-btn">Cotizar</span>
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    <svg class="vec-arrow w-5 h-4" viewBox="0 0 28 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="vec-line" d="M3 12h15"/><path class="vec-head" d="M17 6l7 6-7 6"/></svg>
                 </a>
             </nav>
         </div>
@@ -182,6 +184,20 @@
     <main>
         <!-- 2. SECCIÓN PRINCIPAL (HERO INDUSTRIAL) -->
         <section id="inicio" class="relative bg-[#070b14] cad-grid cad-radial-glow border-b border-slate-800/80 pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden fade-in">
+
+            <!-- Fluido CFD interactivo (decorativo): líneas de corriente + obstáculo esférico que sigue al cursor. Lógica en cfd-flow.js -->
+            <canvas id="cfdCanvas" class="cfd-canvas" aria-hidden="true"></canvas>
+            <div id="cfdBall" class="cfd-ball" aria-hidden="true"></div>
+
+            <!-- Condiciones de frontera del dominio: entrada (velocidad) y salida (presión) -->
+            <div class="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 hidden lg:flex items-center gap-1.5 font-mono text-[10px] text-slate-600 select-none" aria-hidden="true">
+                <span>U∞</span>
+                <svg class="w-5 h-3" viewBox="0 0 28 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h15"/><path d="M17 6l7 6-7 6"/></svg>
+            </div>
+            <div class="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 hidden lg:flex items-center gap-1.5 font-mono text-[10px] text-slate-600 select-none" aria-hidden="true">
+                <span>p = p<sub>out</sub></span>
+                <span class="inline-block w-px h-6 bg-slate-700"></span>
+            </div>
             
             <!-- Marcadores técnicos de esquina tipo viewport CAD -->
             <div class="pointer-events-none absolute top-6 left-6 text-slate-700/60 font-mono text-[10px] select-none hidden md:block">+ [COORD: 0.00, 0.00]</div>
@@ -220,9 +236,9 @@
 
                 <!-- Botones de Acción (CTA) -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-lg mb-4">
-                    <a href="#contacto" data-key="hero-btn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-semibold px-8 py-4 rounded-xl shadow-lg shadow-blue-600/25 border border-blue-400/30 transition-all transform hover:-translate-y-0.5 text-center">
-                        <span>Solicitar Cotización Técnica</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    <a href="#contacto" class="btn-vec w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-semibold px-8 py-4 rounded-xl shadow-lg shadow-blue-600/25 border border-blue-400/30 transition-all transform hover:-translate-y-0.5 text-center">
+                        <span data-key="hero-btn">Solicitar Cotización Técnica</span>
+                        <svg class="vec-arrow w-6 h-5" viewBox="0 0 28 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="vec-line" d="M3 12h15"/><path class="vec-head" d="M17 6l7 6-7 6"/></svg>
                     </a>
                     
                     <a id="heroWaBtn" href="https://wa.me/573059074696?text=Hola,%20solicito%20informaci%C3%B3n%20t%C3%A9cnica%20sobre%20sus%20servicios%20de%20simulaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white font-semibold px-7 py-4 rounded-xl border border-slate-700/80 hover:border-emerald-500/50 transition-all transform hover:-translate-y-0.5 text-center shadow-md">
@@ -232,9 +248,9 @@
                 </div>
 
                 <!-- Enlace rápido a casos de estudio -->
-                <a href="#proyectos" class="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-blue-400 transition-colors mt-2">
+                <a href="#proyectos" class="btn-vec inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-blue-400 transition-colors mt-2">
                     <span data-key="hero-view-cases">Explorar casos de estudio y modelos analíticos</span>
-                    <span>↓</span>
+                    <svg class="vec-arrow w-4 h-4 rotate-90" viewBox="0 0 28 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="vec-line" d="M3 12h15"/><path class="vec-head" d="M17 6l7 6-7 6"/></svg>
                 </a>
 
                 <!-- MATRIZ DE RIGOR TÉCNICO Y VALOR B2B (KPI STRIP) -->
@@ -269,7 +285,17 @@
         </section>
 
         <!-- 3. QUIÉNES SOMOS & BROCHURE CORPORATIVO -->
-        <section id="nosotros" class="py-24 bg-[#0a0f1d] border-b border-slate-800/80 relative cad-grid-dense">
+        <section id="nosotros" class="py-24 bg-[#0a0f1d] border-b border-slate-800/80 relative fea-mesh">
+            <!-- Separador: viga simplemente apoyada con carga distribuida q -->
+            <div class="bc-divider" aria-hidden="true">
+                <span class="flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-[#0a0f1d] border border-slate-800 text-slate-500 font-mono text-[9px] tracking-wider">
+                    <svg width="104" height="26" viewBox="0 0 104 26" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                        <g stroke="#3b82f6"><path d="M16 2H88"/><path d="M20 2V11M16.5 7.5L20 11L23.5 7.5"/><path d="M36 2V11M32.5 7.5L36 11L39.5 7.5"/><path d="M52 2V11M48.5 7.5L52 11L55.5 7.5"/><path d="M68 2V11M64.5 7.5L68 11L71.5 7.5"/><path d="M84 2V11M80.5 7.5L84 11L87.5 7.5"/></g>
+                        <g stroke="#64748b"><path d="M12 14H92"/><path d="M12 14L7 23H17Z"/><path d="M92 14L87 21H97Z"/><path d="M85 23.5H99"/></g>
+                    </svg>
+                    <span>q</span>
+                </span>
+            </div>
             <div class="max-w-6xl mx-auto px-6">
                 
                 <!-- Encabezado de Sección -->
@@ -346,7 +372,17 @@
         </section>
 
         <!-- 4. CATÁLOGO DE SERVICIOS ESPECIALIZADOS -->
-        <section id="servicios" class="py-24 bg-[#070b14] border-b border-slate-800/80 relative">
+        <section id="servicios" class="py-24 bg-[#070b14] border-b border-slate-800/80 relative fea-mesh fea-mesh--coarse">
+            <!-- Separador: voladizo empotrado con fuerza puntual F -->
+            <div class="bc-divider" aria-hidden="true">
+                <span class="flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-[#070b14] border border-slate-800 text-slate-500 font-mono text-[9px] tracking-wider">
+                    <svg width="92" height="26" viewBox="0 0 92 26" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                        <g stroke="#64748b"><path d="M12 3V24"/><path d="M12 7L7 12M12 12L7 17M12 17L7 22M12 22L7 27M12 3L7 8"/><path d="M12 15H80"/></g>
+                        <g stroke="#3b82f6"><path d="M80 1V13M76.5 9.5L80 13L83.5 9.5"/></g>
+                    </svg>
+                    <span>F</span>
+                </span>
+            </div>
             <div class="max-w-6xl mx-auto px-6">
                 
                 <div class="text-center mb-16 fade-in max-w-3xl mx-auto">
@@ -462,7 +498,17 @@
         </section>
 
         <!-- 5. CASOS DE ESTUDIO TÉCNICOS (PROYECTOS EJECUTADOS) -->
-        <section id="proyectos" class="py-24 bg-[#0a0f1d] border-b border-slate-800/80 relative">
+        <section id="proyectos" class="py-24 bg-[#0a0f1d] border-b border-slate-800/80 relative fea-mesh fea-mesh--fine">
+            <!-- Separador: momento M y triada de ejes -->
+            <div class="bc-divider" aria-hidden="true">
+                <span class="flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-[#0a0f1d] border border-slate-800 text-slate-500 font-mono text-[9px] tracking-wider">
+                    <svg width="96" height="26" viewBox="0 0 96 26" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                        <g stroke="#3b82f6"><path d="M38 7A9 9 0 1 0 39 14"/><path d="M35.5 10.5L39 14.5L42.5 11.5"/><circle cx="30" cy="13" r="1.4" fill="#3b82f6"/></g>
+                        <g stroke="#64748b"><path d="M64 22H88M85 19.5L88 22L85 24.5"/><path d="M64 22V3M61.5 6L64 3L66.5 6"/></g>
+                    </svg>
+                    <span>M</span>
+                </span>
+            </div>
             <div class="max-w-7xl mx-auto px-6">
                 
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 fade-in">
@@ -475,11 +521,11 @@
                     <!-- Controles de desplazamiento táctil del slider -->
                     <div class="flex items-center gap-3 mt-6 md:mt-0">
                         <span class="text-xs font-mono text-slate-500 mr-2 hidden sm:inline">DESPLAZAR</span>
-                        <button onclick="document.getElementById('slider').scrollBy({left: -380, behavior: 'smooth'})" class="w-11 h-11 bg-slate-900 hover:bg-blue-600 text-slate-300 hover:text-white rounded-xl border border-slate-800 hover:border-blue-500 flex items-center justify-center transition-all shadow-md focus:outline-none" aria-label="Caso anterior">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                        <button onclick="document.getElementById('slider').scrollBy({left: -380, behavior: 'smooth'})" class="btn-vec w-11 h-11 bg-slate-900 hover:bg-blue-600 text-slate-300 hover:text-white rounded-xl border border-slate-800 hover:border-blue-500 flex items-center justify-center transition-all shadow-md focus:outline-none" aria-label="Caso anterior">
+                            <svg class="vec-arrow w-5 h-4 rotate-180" viewBox="0 0 28 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="vec-line" d="M3 12h15"/><path class="vec-head" d="M17 6l7 6-7 6"/></svg>
                         </button>
-                        <button onclick="document.getElementById('slider').scrollBy({left: 380, behavior: 'smooth'})" class="w-11 h-11 bg-slate-900 hover:bg-blue-600 text-slate-300 hover:text-white rounded-xl border border-slate-800 hover:border-blue-500 flex items-center justify-center transition-all shadow-md focus:outline-none" aria-label="Caso siguiente">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <button onclick="document.getElementById('slider').scrollBy({left: 380, behavior: 'smooth'})" class="btn-vec w-11 h-11 bg-slate-900 hover:bg-blue-600 text-slate-300 hover:text-white rounded-xl border border-slate-800 hover:border-blue-500 flex items-center justify-center transition-all shadow-md focus:outline-none" aria-label="Caso siguiente">
+                            <svg class="vec-arrow w-5 h-4" viewBox="0 0 28 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="vec-line" d="M3 12h15"/><path class="vec-head" d="M17 6l7 6-7 6"/></svg>
                         </button>
                     </div>
                 </div>
@@ -491,7 +537,7 @@
                     <div class="min-w-[310px] md:min-w-[360px] snap-start tech-card rounded-2xl overflow-hidden flex flex-col justify-between group">
                         <div>
                             <div class="relative overflow-hidden cursor-pointer bg-slate-950 aspect-[16/10]" onclick="openLightbox('analisis2.1.png', 'Aerodinámica en Movilidad Ligera • Simulación CFD')">
-                                <img src="analisis2.1.png" alt="Aerodinámica en Movilidad Ligera" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                <img src="analisis2.1.png" alt="Aerodinámica en Movilidad Ligera" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
                                 <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
                                     <span data-key="tag-cfd" class="text-[10px] font-mono font-semibold uppercase tracking-wider text-blue-400 bg-blue-950/90 border border-blue-800/80 px-2.5 py-1 rounded">CFD</span>
@@ -519,7 +565,7 @@
                     <div class="min-w-[310px] md:min-w-[360px] snap-start tech-card rounded-2xl overflow-hidden flex flex-col justify-between group">
                         <div>
                             <div class="relative overflow-hidden cursor-pointer bg-slate-950 aspect-[16/10]" onclick="openLightbox('proyecto1.4.png', 'Distribución de Flujo en Manifold • Simulación CFD')">
-                                <img src="proyecto1.4.png" alt="Distribución de Flujo en Manifold" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                <img src="proyecto1.4.png" alt="Distribución de Flujo en Manifold" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
                                 <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
                                     <span data-key="tag-cfd" class="text-[10px] font-mono font-semibold uppercase tracking-wider text-blue-400 bg-blue-950/90 border border-blue-800/80 px-2.5 py-1 rounded">CFD</span>
@@ -543,11 +589,11 @@
                         </div>
                     </div>
 
-                    <!-- P3: Serpentín Cónico (High-Res 1447x806) -->
+                    <!-- P3: Serpentín Cónico -->
                     <div class="min-w-[310px] md:min-w-[360px] snap-start tech-card rounded-2xl overflow-hidden flex flex-col justify-between group">
                         <div>
-                            <div class="relative overflow-hidden cursor-pointer bg-slate-950 aspect-[16/10]" onclick="openLightbox('proyecto3.2.png', 'Gradiente Térmico en Serpentín Cónico • Análisis CHT')">
-                                <img src="proyecto3.2.png" alt="Gradiente Térmico en Serpentín Cónico" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div class="relative overflow-hidden cursor-pointer bg-slate-950 aspect-[16/10]" onclick="openLightbox('proyecto3.png', 'Gradiente Térmico en Serpentín Cónico • Análisis CHT')">
+                                <img src="proyecto3.png" alt="Gradiente Térmico en Serpentín Cónico" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
                                 <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
                                     <span data-key="tag-thermal" class="text-[10px] font-mono font-semibold uppercase tracking-wider text-amber-400 bg-amber-950/90 border border-amber-800/80 px-2.5 py-1 rounded">Térmico</span>
@@ -575,7 +621,7 @@
                     <div class="min-w-[310px] md:min-w-[360px] snap-start tech-card rounded-2xl overflow-hidden flex flex-col justify-between group">
                         <div>
                             <div class="relative overflow-hidden cursor-pointer bg-slate-950 aspect-[16/10]" onclick="openLightbox('analisis3.1.png', 'Mallado Tridimensional de Intercambiador de Calor')">
-                                <img src="analisis3.1.png" alt="Mallado de Intercambiador de Calor" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                <img src="analisis3.1.png" alt="Mallado de Intercambiador de Calor" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
                                 <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
                                     <span data-key="tag-cfd-thermal" class="text-[10px] font-mono font-semibold uppercase tracking-wider text-amber-400 bg-amber-950/90 border border-amber-800/80 px-2.5 py-1 rounded">CFD / Térmico</span>
@@ -603,7 +649,7 @@
                     <div class="min-w-[310px] md:min-w-[360px] snap-start tech-card rounded-2xl overflow-hidden flex flex-col justify-between group">
                         <div>
                             <div class="relative overflow-hidden cursor-pointer bg-slate-950 aspect-[16/10]" onclick="openLightbox('analisis5.2.png', 'Tensiones Von Mises en Ensamble de Brida • Análisis FEA')">
-                                <img src="analisis5.2.png" alt="Tensiones Von Mises en Brida" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                <img src="analisis5.2.png" alt="Tensiones Von Mises en Brida" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
                                 <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
                                     <span data-key="tag-fea" class="text-[10px] font-mono font-semibold uppercase tracking-wider text-indigo-400 bg-indigo-950/90 border border-indigo-800/80 px-2.5 py-1 rounded">FEA</span>
@@ -627,11 +673,39 @@
                         </div>
                     </div>
 
+                    <!-- P9: Soporte de Bomba (FEA, malla y resultados nodales) -->
+                    <div class="min-w-[310px] md:min-w-[360px] snap-start tech-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+                        <div>
+                            <div class="relative overflow-hidden cursor-pointer bg-slate-950 aspect-[16/10]" onclick="openLightbox('analisis_bomba.png', 'Análisis Estructural de Soporte de Bomba • Malla y Resultados Nodales')">
+                                <img src="analisis_bomba.png" alt="Análisis Estructural de Soporte de Bomba" class="h-full w-full object-cover object-[30%_50%] transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                                <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                                    <span data-key="tag-fea" class="text-[10px] font-mono font-semibold uppercase tracking-wider text-indigo-400 bg-indigo-950/90 border border-indigo-800/80 px-2.5 py-1 rounded">FEA</span>
+                                    <span class="text-[10px] font-mono text-slate-300 bg-slate-900/90 px-2 py-0.5 rounded border border-slate-800">Resultados Nodales</span>
+                                </div>
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <span class="text-white font-mono text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-600/90 border border-blue-400/40 shadow-lg">⛶ Abrir Vista Técnica</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 data-key="p9-title" class="text-base font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
+                                    Análisis Estructural de Soporte de Bomba
+                                </h3>
+                                <p data-key="p9-desc" class="text-slate-400 text-xs font-light leading-relaxed mb-4">
+                                    Mallado por elementos finitos y lectura de resultados nodales en zonas críticas del soporte, con detalle ampliado de los puntos de mayor respuesta.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-0 border-t border-slate-800/60 mt-auto">
+                            <span class="text-[10px] font-mono text-slate-500 uppercase block pt-3">Parámetro: Lectura Nodal en Puntos Críticos</span>
+                        </div>
+                    </div>
+
                     <!-- P6: Deformación en Vigas -->
                     <div class="min-w-[310px] md:min-w-[360px] snap-start tech-card rounded-2xl overflow-hidden flex flex-col justify-between group">
                         <div>
                             <div class="relative overflow-hidden cursor-pointer bg-slate-950 aspect-[16/10]" onclick="openLightbox('analisis6.png', 'Deformación y Flecha Máxima en Vigas • Análisis Elastoestático')">
-                                <img src="analisis6.png" alt="Deformación y Flecha en Vigas" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                <img src="analisis6.png" alt="Deformación y Flecha en Vigas" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
                                 <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
                                     <span data-key="tag-fea" class="text-[10px] font-mono font-semibold uppercase tracking-wider text-indigo-400 bg-indigo-950/90 border border-indigo-800/80 px-2.5 py-1 rounded">FEA</span>
@@ -659,7 +733,7 @@
                     <div class="min-w-[310px] md:min-w-[360px] snap-start tech-card rounded-2xl overflow-hidden flex flex-col justify-between group">
                         <div>
                             <div class="relative overflow-hidden cursor-pointer bg-slate-950 aspect-[16/10]" onclick="openLightbox('proyecto 10.png', 'Modelado Paramétrico 3D de Mezclador Helicoidal')">
-                                <img src="proyecto 10.png" alt="Modelado 3D de Mezclador Helicoidal" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                <img src="proyecto 10.png" alt="Modelado 3D de Mezclador Helicoidal" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
                                 <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
                                     <span data-key="tag-cad" class="text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-300 bg-slate-800/90 border border-slate-700 px-2.5 py-1 rounded">CAD</span>
@@ -687,7 +761,7 @@
                     <div class="min-w-[310px] md:min-w-[360px] snap-start tech-card rounded-2xl overflow-hidden flex flex-col justify-between group">
                         <div>
                             <div class="relative overflow-hidden cursor-pointer bg-slate-950 aspect-[16/10]" onclick="openLightbox('plano1.png', 'Documentación Técnica y Plano de Soldadura Normalizado')">
-                                <img src="plano1.png" alt="Plano Técnico y Detalle de Soldadura" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                <img src="plano1.png" alt="Plano Técnico y Detalle de Soldadura" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
                                 <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
                                     <span data-key="tag-drawings" class="text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-300 bg-slate-800/90 border border-slate-700 px-2.5 py-1 rounded">Planos</span>
@@ -716,7 +790,17 @@
         </section>
 
         <!-- 6. SECCIÓN DE CONTACTO Y COTIZACIONES (B2B INDUSTRIAL) -->
-        <section id="contacto" class="py-24 bg-[#070b14] cad-grid relative">
+        <section id="contacto" class="py-24 bg-[#070b14] fea-mesh relative">
+            <!-- Separador: campo de velocidad de entrada v hacia una frontera -->
+            <div class="bc-divider" aria-hidden="true">
+                <span class="flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-[#070b14] border border-slate-800 text-slate-500 font-mono text-[9px] tracking-wider">
+                    <svg width="84" height="26" viewBox="0 0 84 26" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                        <g stroke="#3b82f6"><path d="M4 6H44M40 3L44 6L40 9"/><path d="M4 13H44M40 10L44 13L40 16"/><path d="M4 20H44M40 17L44 20L40 23"/></g>
+                        <g stroke="#64748b"><path d="M56 2V24"/><path d="M56 6L61 1M56 11L61 6M56 16L61 11M56 21L61 16M56 26L61 21"/></g>
+                    </svg>
+                    <span>v</span>
+                </span>
+            </div>
             <div class="max-w-6xl mx-auto px-6 fade-in">
                 
                 <div class="text-center mb-16 max-w-3xl mx-auto">
@@ -980,6 +1064,8 @@
                 "p7-desc": "Desarrollo paramétrico CAD y ensamblaje de rotor helicoidal de cintas cruzadas para mezcla industrial.",
                 "p8-title": "Plano Técnico y Detalle de Soldadura",
                 "p8-desc": "Documentación técnica normalizada, corte de sección y especificación de cordones de soldadura bajo norma.",
+                "p9-title": "Análisis Estructural de Soporte de Bomba",
+                "p9-desc": "Mallado por elementos finitos y lectura de resultados nodales en zonas críticas del soporte, con detalle ampliado de los puntos de mayor respuesta.",
                 "form-title": "Contacto y Cotizaciones",
                 "form-subtitle": "Escríbenos sobre requerimientos técnicos o solicitudes de servicio para coordinar una evaluación de su proyecto.",
                 "contact-direct-title": "Canales de Atención Directa",
@@ -1076,6 +1162,8 @@
                 "p7-desc": "Parametric CAD design and assembly of double helical ribbon agitator for industrial processing.",
                 "p8-title": "Technical Drawing & Weld Symbols",
                 "p8-desc": "Standardized 2D manufacturing drawings, sectional views, and standardized weld specifications.",
+                "p9-title": "Structural Analysis of Pump Support",
+                "p9-desc": "Finite element meshing and nodal result readout at critical regions of the support, with magnified views of the highest-response points.",
                 "form-title": "Contact & Quotations",
                 "form-subtitle": "Reach out regarding technical requirements or service requests to schedule an evaluation of your project.",
                 "contact-direct-title": "Direct Contact Channels",
@@ -1158,10 +1246,10 @@
                 "tag-drawings": "Desenhos",
                 "p1-title": "Aerodinâmica em Mobilidade Leve",
                 "p1-desc": "Simulação de fluxo externo, esteira aerodinâmica e avaliação de arrasto em veículo personalizado.",
-                "p2-title": "Distribuição de Flujo em Manifold",
+                "p2-title": "Distribuição de Fluxo em Manifold",
                 "p2-desc": "Linhas de corrente e magnitude de velocidade em coletor de distribuição multicanal.",
                 "p3-title": "Gradiente Térmico em Serpentina Cônica",
-                "p3-desc": "Mapeamento de transferência de calor e perfil de temperatura em trocador helicoidal cónico.",
+                "p3-desc": "Mapeamento de transferência de calor e perfil de temperatura em trocador helicoidal cônico.",
                 "p4-title": "Discretização de Malha em Trocador",
                 "p4-desc": "Discretização espacial 3D e refinamento de malha em trocador de calor com chicanas.",
                 "p5-title": "Tensões Von Mises em Flange",
@@ -1172,6 +1260,8 @@
                 "p7-desc": "Projeto CAD paramétrico e montagem de rotor helicoidal de fitas para mistura industrial.",
                 "p8-title": "Desenho Técnico e Soldagem",
                 "p8-desc": "Documentação técnica padronizada, vistas em corte e especificação de solda conforme normas.",
+                "p9-title": "Análise Estrutural de Suporte de Bomba",
+                "p9-desc": "Malha de elementos finitos e leitura de resultados nodais em regiões críticas do suporte, com detalhes ampliados dos pontos de maior resposta.",
                 "form-title": "Contato e Cotações",
                 "form-subtitle": "Entre em contato sobre requisitos técnicos ou solicitações de serviço para agendarmos uma avaliação do seu projeto.",
                 "contact-direct-title": "Canais de Atendimento Direto",
